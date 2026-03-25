@@ -1,0 +1,127 @@
+:root {
+  --pink-base: #ff69b4; /* couleur rosée globale en hex */
+}
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0b0b0b;
+  color: white;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Slides */
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  transition: transform 0.7s ease; /* effet de déplacement vertical */
+}
+
+/* Overlay pour capturer les clics */
+#click-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+/* Bulles animées */
+#bubble-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation-name: rise;
+  animation-timing-function: linear;
+}
+
+@keyframes rise {
+  0% { transform: translateY(100vh); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(-50px); opacity: 0; }
+}
+
+/* Bulles de navigation */
+.nav-bubbles {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.nav-bubble {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgba(var(--pink-base), 0.5);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.nav-bubble.active {
+  background: rgba(var(--pink-base), 1);
+  transform: scale(1.5);
+}
+
+/* Numéro de slide */
+#slide-number {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  z-index: 10; 
+  text-shadow: 0 0 5px black;
+}
+
+/* Zone de texte */
+#slide-bottom {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 16px;
+  z-index: 10;
+  text-align: center;
+  text-shadow: 0 0 5px black;
+  pointer-events: none;
+}

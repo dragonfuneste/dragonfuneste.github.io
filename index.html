@@ -1,76 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grégory Loubet-Bonino</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #8e5bd1;
-      color: white;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.3);
-      padding: 10px;
-      backdrop-filter: blur(5px);
-    }
-
-    nav a {
-      margin: 0 15px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 100px 40px;
-      min-height: 100vh;
-    }
-
-    h1, h2 {
-      margin-top: 0;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="home.css" />
 </head>
+
 <body>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#research">Research</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <div id="bubble-container"></div>
 
-<section id="about">
-  <h1>Grégory Loubet-Bonino</h1>
-  <p>PhD Student in Software Engineering</p>
-</section>
+  <header class="top-banner">
+    <h2>PhD Student in Software Engineering — Embedded Systems & Robotics</h2>
+  </header>
 
-<section id="research">
-  <h2>Research</h2>
-  <p>Autonomous robotics, embedded systems, FPGA, reliability...</p>
-</section>
+  <main class="landing-layout">
 
-<section id="skills">
-  <h2>Skills</h2>
-  <p>C, C++, Python, VHDL, STM32, FPGA...</p>
-</section>
+    <div class="profile-photo">
+      <img src="assets/image/index/myself.png" alt="Photo de Grégory">
+    </div>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <p>To be added...</p>
-</section>
+    <!-- Carrousel central a refaire je veux que ca soit un truc dynamique qui tourne si y faut on peut rajouter un fichier js pour le rendre dynamique-->
+    <div class="project-carousel">
+      <h1 class="title">Mes Projets</h1>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: loubetgregoryb@gmail.com</p>
-</section>
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="assets/image/index/image-example.png" alt="Projet 1">
+          <img src="assets/image/index/image-example.png" alt="Projet 2">
+          <img src="assets/image/index/image-example.png" alt="Projet 3">
+          <img src="assets/image/index/image-example.png" alt="Projet 4">
+        </div>
+      </div>
+    </div>
 
+  </main>
+
+  <!-- Menu du bas -->
+  <footer class="bottom-menu">
+    <a href="about.html" class="menu-box">About Me</a>
+    <a href="research.html" class="menu-box">Research</a>
+    <a href="projects.html" class="menu-box">Projects</a>
+    <a href="contact.html" class="menu-box">Contact</a>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
