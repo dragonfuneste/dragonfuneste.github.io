@@ -1,157 +1,165 @@
-profile:
-  name: "Grégory Loubet-Bonino"
-  title: "PhD Student in Software Engineering"
-  nationality: "French"
-  location: "Bern, CH"
-  phone: "+33 6 76 57 22 83"
-  email: "loubetgregoryb@gmail.com"
-  github: "https://github.com/dragonfuneste"
-  linkedin: "https://www.linkedin.com/in/grégory-loubet-bonino-969879225/"
-  website: "https://dragonfuneste.github.io/"
-  photo: "assets/image/myself/photo.png"
-  age: "23"
-  citation: "Become who you are, and be what only you can be. — Friedrich Nietzsche"
+const CV_DATA = {
+    profile: {
+        name: "Grégory Loubet-Bonino",
+        title: "PhD Student in Software Engineering",
+        nationality: "French",
+        location: "Bern, CH",
+        phone: "+33 6 76 57 22 83",
+        email: "loubetgregoryb@gmail.com",
+        github: "https://github.com/dragonfuneste",
+        linkedin: "https://www.linkedin.com/in/grégory-loubet-bonino-969879225/",
+        website: "https://dragonfuneste.github.io/",
+        photo : "assets/image/myself/photo.png",
+        age : "23",
+        citation :"Become who you are, and be what only you can be. — Friedrich Nietzsche"
+    },
 
-experience:
-  - title: "PhD Researcher – Innoguard Project"
-    company: "University of Bern - SEG Team"
-    date: "2025 - Present"
-    details_long: "Dans ce doctorat, j'ai eu pour objectifs de rendre des robots self adaptive à des environnements dynamiques en utilisant les techniques de software engineering pour les rendre plus sûrs. Également rendre le monitoring par les capteurs plus intelligent."
-    logo: "assets/image/myself/logo_team.png"
-    skills:
-      - "ROS2"
-      - "VLM and RL AI"
-      - "Teaching"
-  - title: "Internship in Microelectronics"
-    company: "INL Laboratory - FVLLMONTI"
-    date: "2025"
-    details_long: "Test de différentes structures transistoriel en simulation (JLNWFET). Conception et mesure des effets de température, tension et vieillissement. Analyse des conséquences au niveau réseaux de neurones."
-    logo: "assets/image/myself/FVLLMONTI.png"
-    skills:
-      - "Cadence"
-      - "Verilog"
-      - "VHDL"
-      - "Verilog A"
-      - "Synthesis"
-  - title: "Internship as an assistant engineer"
-    company: "Guillemin, Dijon"
-    date: "2023"
-    details_long: "Design of mechanical parts for automation. Soldering, testing and checking PCBs used in industrial machines."
-    logo: "assets/image/myself/Guillemin.png"
-    skills:
-      - "Solidworks"
-      - "Soldering"
-      - "Electronics"
-  - title: "Freelance PCB Designer"
-    company: "Gregory_Corps"
-    date: "2024 - 2026"
-    details_long: "Build PCBs for clients (Electric quad startup, Simulator steering wheel, Plasma cutting vacuum system). Managed electronics design and business accounting."
-    logo: "assets/image/myself/Fiver.png"
-    skills:
-      - "PCB design"
-      - "Embedded systems"
-      - "Company accounting"
+    // --- EXPERIENCES (STAGES & JOB) ---
+    experience: [
+        {
+            title: "PhD Researcher – Innoguard Project",
+            company: "University of Bern - SEG Team",
+            date: "2025 - Present",
+            details_long: "Dans ce doctorat, j'ai eu pour objectifs de rendre des robots self adaptive à des environnements dynamiques en utilisant les techniques de software engineering pour les rendre plus sûrs. Également rendre le monitoring par les capteurs plus intelligent.",
+            logo: "assets/image/myself/logo_team.png",
+            skills: ["ROS2", "VLM and RL AI", "Teaching"]
+        },
+        {
+            title: "Internship in Microelectronics",
+            company: "INL Laboratory - FVLLMONTI",
+            date: "2025",
+            details_long: "Test de différentes structures transistoriel en simulation (JLNWFET). Conception et mesure des effets de température, tension et vieillissement. Analyse des conséquences au niveau réseaux de neurones.",
+            logo: "assets/image/myself/FVLLMONTI.png",
+            skills: ["Cadence", "Verilog", "VHDL", "Verilog A", "Synthesis"]
+        },
+        {
+            title: "Internship as an assistant engineer",
+            company: "Guillemin, Dijon",
+            date: "2023",
+            details_long: "Design of mechanical parts for automation. Soldering, testing and checking PCBs used in industrial machines.",
+            logo: "assets/image/myself/Guillemin.png",
+            skills: ["Solidworks", "Soldering", "Electronics"]
+        },
+        {
+            title: "Freelance PCB Designer",
+            company: "Gregory_Corps",
+            date: "2024 - 2026",
+            details_long: "Build PCBs for clients (Electric quad startup, Simulator steering wheel, Plasma cutting vacuum system). Managed electronics design and business accounting.",
+            logo: "assets/image/myself/Fiver.png",
+            skills: ["PCB design", "Embedded systems", "Company accounting"]
+        }
+    ],
 
-teams:
-  - name: "Projet Tech"
-    type: "Robotic association"
-    date: "2022 - 2026"
-    details: "Build and design robots for the French Robotics Cup, BB8 robot, Arcade cabinet."
-    logo: "assets/image/myself/logo_P&T.png"
-    skills:
-      - "Robotics"
-      - "PCB design"
-      - "3D printing"
-    git: "https://github.com/ProjetTech"
-  - name: "USG Genlis"
-    type: "rugby club"
-    date: "2026 - 2020"
-    details: "Played in a rugby club for fun"
-    logo: "assets/image/myself/USG.png"
-  - name: "Telecom rugby teams"
-    type: "rugby club"
-    date: "2023 - 2025"
-    details: "Played in a rugby club for fun"
+    // --- TEAMS / ASSOCIATIONS ---
+    teams: [
+        {
+            name: "Projet Tech",
+            type: "Robotic association",
+            date: "2022 - 2026",
+            details: "Build and design robots for the French Robotics Cup, BB8 robot, Arcade cabinet.",
+            logo: "assets/image/myself/logo_P&T.png",
+            skills: ["Robotics", "PCB design", "3D printing"],
+            git: "https://github.com/ProjetTech"
+        },
+                {
+            name: "USG Genlis",
+            type: "rugby club",
+            date: "2026 - 2020",
+            details: "Played in a rugby club for fun ",
+            logo: "assets/image/myself/USG.png",
+        },
+                        {
+            name: "Telecom rugby teams",
+            type: "rugby club",
+            date: "2023 - 2025",
+            details: "Played in a rugby club for fun ",
+        }
+    ],
 
-projects:
-  robotics:
-    - name: "French Robotics Cup"
-      hardware: "STM32"
-      lang: "Assembly, C, C++"
-      duration: "3 years"
-    - name: "Real-time robot with FreeRTOS"
-      hardware: "STM32"
-      details: "IMU integration, school project 20h"
-    - name: "Personal projects"
-      hardware: "Raspberry Pi, STM32, ESP32"
-  embedded_linux:
-    - name: "Linux drivers development"
-      hardware: "BeagleBone Black"
-      details: "School project 10h"
-    - name: "Educational robot for children"
-      hardware: "BeagleBone"
-      duration: "100h"
-      date: "2023-2024"
-  fpga_asic:
-    - name: "Alarm clock"
-      hardware: "Cyclone V FPGA"
-      software: "Quartus"
-      duration: "30h"
-    - name: "Circuit simulation"
-      software: "Cadence"
-      details: "School project 10h"
-  neural_networks:
-    - name: "MNIST on FPGA"
-      hardware: "Pynq (Xilinx)"
-      software: "Vivado & FINN"
-      duration: "30h"
-    - name: "STM32-based NN optimization"
-      details: "Personal group project 50h"
-  security:
-    - name: "AES implementation on FPGA"
-      duration: "50h"
-    - name: "RSA, Diffie-Hellman & AES on STM32"
-      duration: "30h"
-  microelectronics:
-    - name: "JLNWFET evaluation"
-      software: "Cadence & Synopsys"
-      details: "Transistor to Neural Network level"
-    - name: "Automation scripts"
-      lang: "Lisp, Verilog"
-      details: "Measurement workflows"
+    // --- TECHNICAL PROJECTS ---
+    projects: {
+        robotics: [
+            { name: "French Robotics Cup", hardware: "STM32", lang: "Assembly, C, C++", duration: "3 years" },
+            { name: "Real-time robot with FreeRTOS", hardware: "STM32", details: "IMU integration, school project 20h" },
+            { name: "Personal projects", hardware: "Raspberry Pi, STM32, ESP32" }
+        ],
+        embedded_linux: [
+            { name: "Linux drivers development", hardware: "BeagleBone Black", details: "School project 10h" },
+            { name: "Educational robot for children", hardware: "BeagleBone", duration: "100h", date: "2023-2024" }
+        ],
+        fpga_asic: [
+            { name: "Alarm clock", hardware: "Cyclone V FPGA", software: "Quartus", duration: "30h" },
+            { name: "Circuit simulation", software: "Cadence", details: "School project 10h" }
+        ],
+        neural_networks: [
+            { name: "MNIST on FPGA", hardware: "Pynq (Xilinx)", software: "Vivado & FINN", duration: "30h" },
+            { name: "STM32-based NN optimization", details: "Personal group project 50h" }
+        ],
+        security: [
+            { name: "AES implementation on FPGA", duration: "50h" },
+            { name: "RSA, Diffie-Hellman & AES on STM32", duration: "30h" }
+        ],
+        microelectronics: [
+            { name: "JLNWFET (name for transitors) evaluation", software: "Cadence & Synopsys", details: "Transistor to Neural Network level" },
+            { name: "Automation scripts", lang: "Lisp, Verilog", details: "Measurement workflows" }
+        ]
+    },
 
-education:
-  - degree: "Engineering degree"
-    school: "Telecom Saint-Etienne"
-    date: "2022-2025"
-    details: "Embedded Linux, Digital Design, Real-Time Programming, Microcontroller Programming, Cybersecurity, Embedded AI, Secured Hardware Architecture"
-    logo: "assets/image/myself/Telecom.png"
-  - degree: "Master 3EA (Dual-Degree)"
-    school: "Centrale Lyon"
-    date: "2024-2025"
-    details: "Computer Architecture, Embedded System Design, Sensors"
-    logo: "assets/image/myself/logo_ECL.png"
-  - degree: "DEUG - Prepas TSI"
-    school: "Lycée Gustave Eiffel Dijon"
-    date: "2020-2022"
-    details: "Ranked 1st of the promotion"
-    logo: "assets/image/myself/logo_Eiffel.png"
-  - degree: "Baccalaureate STI2D"
-    school: "Lycée Gustave Eiffel Dijon"
-    date: "2020"
-    details: "High honors, 1st of the promotion"
-    logo: "assets/image/myself/logo_Eiffel.png"
+    // --- EDUCATION ---
+    education: [
+        { 
+            degree: "Engineering degree", 
+            school: "Telecom Saint-Etienne", 
+            date: "2022-2025",
+            details: "Embedded Linux, Digital Design, Real-Time Programming, Microcontroller Programming, Cybersecurity, Embedded AI, Secured Hardware Architecture",
+            logo: "assets/image/myself/Telecom.png" 
+        },
+        { 
+            degree: "Master 3EA (Dual-Degree)", 
+            school: "Centrale Lyon", 
+            date: "2024-2025",
+            details: "Computer Architecture, Embedded System Design, Sensors",
+            logo: "assets/image/myself/logo_ECL.png" 
+        },
+        { 
+            degree: "DEUG - Prepas TSI", 
+            school: "Lycée Gustave Eiffel Dijon", 
+            date: "2020-2022",
+            details: "Ranked 1st of the promotion",
+            logo: "assets/image/myself/logo_Eiffel.png" 
+        },
+        { 
+            degree: "Baccalaureate STI2D", 
+            school: "Lycée Gustave Eiffel Dijon", 
+            date: "2020",
+            details: "High honors, 1st of the promotion",
+            logo: "assets/image/myself/logo_Eiffel.png" 
+        }
+    ],
 
-hobbies:
-  - name: "plant gardening"
-    image: "assets/image/myself/plant.png"
-  - name: "cat lover"
-    cat: "assets/image/myself/cat.png"
-  - name: "Rugby"
-    cat: "assets/image/myself/rubgy.png"
-  - name: "Robots"
-    cat: "assets/image/myself/robots.png"
-
-achievements:
-  - name: "Complete my Ingeneering degree coming from the bottom of the Baccalaureate of france for doing high level study"
-    image: "assets/image/myself/diplome.png"
+    Hobbies : [ 
+    {
+         name : "plant gardening",
+         image : "assets/image/myself/plant.png"
+    }, 
+        {
+         name : "plant gardening",
+         cat : "assets/image/myself/cat.png"
+    }, 
+        {
+         name : "Rugby",
+         cat : "assets/image/myself/rubgy.png"
+    }, 
+        {
+         name : "Robots",
+         cat : "assets/image/myself/robots.png"
+    }
+    
+    ],
+    Achievement : [
+            {
+            name : "Complete my Ingeneering degree coming from the bottom of the Baccalaureate of france for doing high level study ",
+            image : "assets/image/myself/diplome.png"
+            }, 
+    ]
+};
