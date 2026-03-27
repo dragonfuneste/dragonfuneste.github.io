@@ -11,6 +11,7 @@ profile:
   photo: "assets/image/myself/photo.png"
   age: "23"
   citation: "Become who you are, and be what only you can be. — Friedrich Nietzsche"
+  motivation : "Passionate of new technology, because of my cursus I really love electronics and later that lead me to build robot and love to do it. Now I'm thriving to do one of this two field as my main work"
 
 experience:
   - title: "PhD Researcher – Innoguard Project"
@@ -22,6 +23,7 @@ experience:
       - "ROS2"
       - "VLM and RL AI"
       - "Teaching"
+      - "Robotics"      
   - title: "Internship in Microelectronics"
     company: "INL Laboratory - FVLLMONTI"
     date: "2025"
