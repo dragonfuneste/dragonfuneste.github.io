@@ -1,31 +1,53 @@
-/* --- Mise en page globale --- */
+/* --- Mise en page spécifique à l'Index --- */
 .landing-layout {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
+  overflow-x: hidden;
 }
 
-/* --- Photo de profil (Carrée et plus grosse) --- */
+/* --- Bannière de présentation --- */
+.top-banner {
+  padding-top: 40px;
+  padding-left: 40px;
+  z-index: 5;
+  max-width: calc(100% - 200px); /* Évite le chevauchement avec la photo */
+}
+
+.top-banner h1 {
+  color: white;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.top-banner h2 {
+  color: #aaa;
+  font-size: 1.1rem;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+/* --- Photo de profil (Positionnée en haut à droite) --- */
 .profile-photo {
-  position: absolute;
-  top: 80px; /* Juste sous le bandeau du haut */
-  right: 40px;
-  z-index: 100;
+  position: absolute; 
+  top: 20px; 
+  right: 20px;
+  z-index: 999;
 }
 
 .profile-photo img {
-  width: 200px; /* Taille augmentée */
-  height: 200px;
-  border: 4px solid var(--pink-base);
+  width: 150px;
+  height: 150px;
+  border: 3px solid var(--pink-base); /* Utilisation de ta variable globale */
+  border-radius: 12px;
   object-fit: cover;
-  /* On a retiré border-radius pour que ce soit un carré */
-  box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
 }
 
-/* --- Section Carrousel (Centre) --- */
+/* --- Section Carrousel --- */
 .project-carousel {
   flex: 1; 
   display: flex;
@@ -33,74 +55,52 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-bottom: 100px; /* Laisse de la place pour le menu fixe */
+  margin-top: 40px;
+  margin-bottom: var(--menu-height); /* Utilise la variable de ton layout */
+  z-index: 10;
 }
 
 .title {
   color: var(--pink-base);
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 25px;
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
+/* --- Animation du défilement --- */
 .carousel {
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 105, 180, 0.2);
+  border-bottom: 1px solid rgba(255, 105, 180, 0.2);
 }
 
 .carousel-track {
   display: inline-flex;
   gap: 20px;
-  animation: scroll-left 25s linear infinite;
+  animation: scroll-left 30s linear infinite; /* Animation continue */
 }
 
 .carousel-track img {
-  width: 400px; /* Images plus larges */
-  height: 250px;
+  width: 350px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 8px;
   flex-shrink: 0;
+  border: 2px solid transparent;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-/* --- Animation --- */
+.carousel-track img:hover {
+  border-color: var(--pink-base);
+  transform: scale(1.05); /* Petit effet au survol */
+}
+
 @keyframes scroll-left {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } 
-}
-
-/* --- Menu du Bas (Fixé pour être toujours visible) --- */
-.bottom-menu {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(11, 11, 11, 0.95); /* Fond sombre pour bien voir les boutons */
-  border-top: 1px solid rgba(255, 105, 180, 0.3);
-  z-index: 1000;
-}
-
-.menu-box {
-  flex: 1;
-  max-width: 220px;
-  height: 50px;
-  margin: 0 15px; /* L'espace vide entre les menus */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--pink-base);
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.menu-box:hover {
-  background: var(--pink-base);
-  color: black;
-  box-shadow: 0 0 15px var(--pink-base);
+  100% { transform: translateX(-50%); } /* Défilement infini si images doublées */
 }
