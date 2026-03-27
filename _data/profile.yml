@@ -146,13 +146,13 @@ education:
 
 hobbies:
   - name: "plant gardening"
-    image: "assets/image/myself/plant.png"
+    image: "assets/image/myself/plante.png"
   - name: "cat lover"
     image: "assets/image/myself/cat.png"
   - name: "Rugby"
-    image: "assets/image/myself/rubgy.png"
+    image: "assets/image/myself/USG.png"
   - name: "Robots"
-    image: "assets/image/myself/robots.png"
+    image: "assets/image/myself/logo_P&T.png"
 
 achievements:
   - name: "Complete my Ingeneering degree coming from the bottom of the Baccalaureate of france for doing high level study"
