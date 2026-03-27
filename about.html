@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me – Grégory Loubet-Bonino</title>
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+
+  <style>
+    :root { --pink-base: #ff69b4; }
+    body { background-color: #0b0b0b; overflow-y: auto !important; color: white; font-family: 'Segoe UI', sans-serif; line-height: 1.5; }
+
+    .about-container {
+      padding: 20px;
+      max-width: 1050px;
+      margin: 40px auto 120px auto;
+      z-index: 10;
+      position: relative;
+    }
+
+    /* --- Header Fixé : Pas de superposition --- */
+    .cv-header {
+      display: grid;
+      grid-template-columns: 1fr auto; /* Sépare strictement les infos des contacts */
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom: 3px solid var(--pink-base);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      gap: 20px;
+      align-items: center;
+    }
+
+    @media (max-width: 850px) {
+      .cv-header { grid-template-columns: 1fr; }
+      .header-contact { text-align: left !important; border-right: none !important; border-left: 4px solid var(--pink-base); }
+      .header-contact p { justify-content: flex-start !important; }
+    }
+
+    .profile-section { display: flex; align-items: center; gap: 25px; }
+
+    .profile-photo img {
+      width: 140px; height: 140px;
+      border: 3px solid var(--pink-base);
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .header-info h1 { color: var(--pink-base); font-size: clamp(1.5rem, 4vw, 2.2rem); margin: 0; text-transform: uppercase; line-height: 1.1; }
+    .header-info .job-title { font-size: 1.1rem; color: #eee; margin-top: 5px; font-weight: bold; }
+    
+    .tags { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag { font-size: 0.7rem; border: 1px solid var(--pink-base); padding: 2px 8px; border-radius: 15px; color: var(--pink-base); }
+
+    .header-contact { 
+      text-align: right; 
+      font-family: 'Courier New', monospace; 
+      font-size: 0.85rem; 
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 10px;
+      border-right: 4px solid var(--pink-base);
+    }
+    .header-contact p { margin: 4px 0; display: flex; justify-content: flex-end; align-items: center; gap: 10px; }
+    .header-contact a { color: #fff; text-decoration: none; }
+
+    /* --- Sections --- */
+    .section-title {
+      color: var(--pink-base);
+      font-size: 1.4rem;
+      margin: 40px 0 20px 0;
+      border-left: 4px solid var(--pink-base);
+      padding-left: 15px;
+      text-transform: uppercase;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .cv-item { display: grid; grid-template-columns: 70px 1fr auto; gap: 15px; margin-bottom: 25px; align-items: start; }
+    .cv-item:last-child { margin-bottom: 0; }
+    .cv-item-logo { width: 60px; height: 60px; object-fit: contain; background: white; padding: 4px; border-radius: 6px; }
+    .cv-item-title { font-weight: bold; color: white; display: block; }
+    .cv-item-subtitle { color: var(--pink-base); font-size: 0.9rem; display: block; }
+    .cv-item-date { font-family: 'Courier New', monospace; color: #888; font-size: 0.85rem; text-align: right; }
+    .cv-item-details { grid-column: 2 / 4; color: #bbb; font-size: 0.9rem; margin-top: 5px; }
+
+    /* --- Formulaire Email Direct --- */
+    .contact-form-section {
+      margin-top: 60px;
+      border: 1px solid var(--pink-base);
+      padding: 30px;
+      border-radius: 15px;
+      background: rgba(255, 105, 180, 0.03);
+    }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; color: var(--pink-base); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 5px; }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 12px; background: #000; border: 1px solid #333; color: white; border-radius: 6px; box-sizing: border-box;
+    }
+    .submit-btn {
+      background: var(--pink-base); color: black; border: none; padding: 12px 30px; 
+      font-weight: bold; border-radius: 6px; cursor: pointer; width: 100%;
+    }
+
+    .pdf-download {
+      position: fixed; top: 20px; right: 20px; z-index: 1000;
+      background: var(--pink-base); color: black; padding: 10px 15px;
+      border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.75rem;
+    }
+  </style>
+
+  <script>
+    function sendMail(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const body = document.getElementById('message').value;
+      const subject = "Contact from Website - " + name;
+      window.location.href = `mailto:loubetgregoryb@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+  </script>
+</head>
+<body>
+
+  <div id="bubble-container"></div>
+  <a href="CV_Loubet_Bonino_Gregory.pdf" target="_blank" class="pdf-download">📄 PDF CV</a>
+
+  <div class="about-container">
+    
+    <header class="cv-header">
+      <div class="profile-section">
+        <div class="profile-photo">
+          <img src="assets/image/index/myself.png" alt="Photo">
+        </div>
+        <div class="header-info">
+          <h1>Grégory Loubet-Bonino</h1>
+          <div class="job-title">PhD Student in Software Engineering</div>
+          <p>University of Bern | SEG Team</p>
+          <div class="tags">
+            <span class="tag">Robotics</span> <span class="tag">Embedded Systems</span> <span class="tag">Innoguard</span>
+          </div>
+        </div>
+      </div>
+      <div class="header-contact">
+        <p>📍 Bern, CH</p>
+        <p>📞 +33 6 76 57 22 83</p>
+        <p>✉️ <a href="mailto:loubetgregoryb@gmail.com">loubetgregoryb@gmail.com</a></p>
+        <p>💻 <a href="https://github.com/dragonfuneste" target="_blank">GitHub</a></p>
+      </div>
+    </header>
+
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="glass-card">
+      <div class="cv-item">
+        <img src="assets/image/myself/logo_bern.png" class="cv-item-logo">
+        <div>
+          <span class="cv-item-title">PhD Researcher – Innoguard Project</span>
+          <span class="cv-item-subtitle">University of Bern - SEG Team</span>
+        </div>
+        <div class="cv-item-date">2025 - Present</div>
+        <div class="cv-item-details">Testing, monitoring, and self-adaptive robotics.</div>
+      </div>
+
+      <div class="cv-item">
+        <img src="assets/image/myself/FVLLMONTI.png" class="cv-item-logo">
+        <div>
+          <span class="cv-item-title">Internship in Microelectronics</span>
+          <span class="cv-item-subtitle">INL Laboratory - FVLLMONTI</span>
+        </div>
+        <div class="cv-item-date">2025</div>
+      </div>
+
+      <div class="cv-item">
+        <img src="assets/image/myself/Guillemin.png" class="cv-item-logo">
+        <div>
+          <span class="cv-item-title">Internship in Automation</span>
+          <span class="cv-item-subtitle">Guillemin, Dijon</span>
+        </div>
+        <div class="cv-item-date">2023</div>
+        <div class="cv-item-details">3D modeling, PLC programming, and PCB soldering.</div>
+      </div>
+
+      <div class="cv-item">
+        <img src="assets/image/myself/FIVER.png" class="cv-item-logo">
+        <div>
+          <span class="cv-item-title">Freelance PCB Designer</span>
+          <span class="cv-item-subtitle">Fiverr / International</span>
+        </div>
+        <div class="cv-item-date">2024 - 2025</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Education</h2>
+    <div class="glass-card">
+      <div class="cv-item">
+        <img src="assets/image/myself/logo_ECL.png" class="cv-item-logo">
+        <div><span class="cv-item-title">Master 3EA (Dual-Degree)</span><span class="cv-item-subtitle">Centrale Lyon</span></div>
+        <div class="cv-item-date">2024-2025</div>
+      </div>
+      <div class="cv-item">
+        <img src="assets/image/myself/Telecom.png" class="cv-item-logo">
+        <div><span class="cv-item-title">Eng. Degree Embedded Systems</span><span class="cv-item-subtitle">Telecom Saint-Étienne</span></div>
+        <div class="cv-item-date">2022-2025</div>
+      </div>
+      <div class="cv-item">
+        <img src="assets/image/myself/logo_Eiffel.png" class="cv-item-logo">
+        <div><span class="cv-item-title">Preparatory Class TSI / Bac STI2D</span><span class="cv-item-subtitle">Lycée Gustave Eiffel</span></div>
+        <div class="cv-item-date">2017-2022</div>
+      </div>
+    </div>
+
+    <section class="contact-form-section">
+      <h2 style="margin-top:0; color:var(--pink-base);">Direct Contact</h2>
+      <form onsubmit="sendMail(event)">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea id="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">OPEN EMAIL CLIENT</button>
+      </form>
+    </section>
+
+  </div>
+
+  <footer class="bottom-menu">
+    <a href="index.html" class="menu-box">Home</a>
+    <a href="research.html" class="menu-box">Research</a>
+    <a href="projects.html" class="menu-box">Projects</a>
+    <a href="repository.html" class="menu-box">Repository</a>
+    <a href="contact.html" class="menu-box">Contact</a>
+  </footer>
+
+</body>
+</html>

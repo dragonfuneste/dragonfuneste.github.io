@@ -1,0 +1,106 @@
+/* --- Mise en page globale --- */
+.landing-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* --- Photo de profil (Carrée et plus grosse) --- */
+.profile-photo {
+  position: absolute;
+  top: 80px; /* Juste sous le bandeau du haut */
+  right: 40px;
+  z-index: 100;
+}
+
+.profile-photo img {
+  width: 200px; /* Taille augmentée */
+  height: 200px;
+  border: 4px solid var(--pink-base);
+  object-fit: cover;
+  /* On a retiré border-radius pour que ce soit un carré */
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+}
+
+/* --- Section Carrousel (Centre) --- */
+.project-carousel {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 100px; /* Laisse de la place pour le menu fixe */
+}
+
+.title {
+  color: var(--pink-base);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.carousel-track {
+  display: inline-flex;
+  gap: 20px;
+  animation: scroll-left 25s linear infinite;
+}
+
+.carousel-track img {
+  width: 400px; /* Images plus larges */
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+/* --- Animation --- */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } 
+}
+
+/* --- Menu du Bas (Fixé pour être toujours visible) --- */
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(11, 11, 11, 0.95); /* Fond sombre pour bien voir les boutons */
+  border-top: 1px solid rgba(255, 105, 180, 0.3);
+  z-index: 1000;
+}
+
+.menu-box {
+  flex: 1;
+  max-width: 220px;
+  height: 50px;
+  margin: 0 15px; /* L'espace vide entre les menus */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--pink-base);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.menu-box:hover {
+  background: var(--pink-base);
+  color: black;
+  box-shadow: 0 0 15px var(--pink-base);
+}

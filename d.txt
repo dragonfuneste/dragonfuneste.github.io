@@ -1,0 +1,1 @@
+ok on a le menu du bas je veux monter mes projet et du coups agrandir le menu déroulant vers le haut je veux descendre le "PhD Student in Software Engineering — Embedded Systems & Robotics" et rajouter mon nom Grégory Loubet Bonino en plus gros que le message precedent et au dessus de ce dernier

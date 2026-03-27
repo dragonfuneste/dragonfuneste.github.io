@@ -1,0 +1,54 @@
+name: Generate CV PDF from about.html
+
+on:
+  push:
+    branches:
+      - main # Ou 'master', remplace si besoin
+    paths:
+      - 'about.html' # Ne se lance que si about.html est modifié
+      - 'assets/css/**' # Ou si les styles sont modifiés
+
+jobs:
+  convert_to_pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      # Nous utilisons Puppeteer pour faire la conversion HTML -> PDF
+      - name: Install Puppeteer
+        run: npm install puppeteer
+
+      - name: Generate PDF
+        run: |
+          node -e "const puppeteer = require('puppeteer'); (async () => {
+            const browser = await puppeteer.launch();
+            const page = await browser.newPage();
+            // Charge about.html depuis le système de fichiers local
+            await page.goto('file://' + process.cwd() + '/about.html', {waitUntil: 'networkidle0'});
+            
+            // Applique un style spécifique pour l'impression
+            await page.addStyleTag({content: 'body { background: white !important; color: black !important; margin: 0; padding: 0;} .about-container { margin: 0 auto; padding: 20px; } .cv-header { border-color: black !important; } .section-title { color: black !important; border-color: black !important; } .cv-item-date { color: black !important; } .glass-card { background: none !important; border: none !important; backdrop-filter: none !important; padding: 0; margin-bottom: 10px;} .bottom-menu, #bubble-container, .pdf-download { display: none !important; } '});
+
+            await page.pdf({
+              path: 'CV_Loubet_Bonino_Gregory.pdf',
+              format: 'A4',
+              printBackground: true,
+              margin: { top: '1cm', right: '1cm', bottom: '1cm', left: '1cm' }
+            });
+            await browser.close();
+          })();"
+
+      # Nous commitons le PDF généré directement sur la branche pour qu'il soit public
+      - name: Commit and Push PDF
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add CV_Loubet_Bonino_Gregory.pdf
+          git commit -m "Automated CV PDF generation [skip ci]" || echo "No changes to commit"
+          git push
