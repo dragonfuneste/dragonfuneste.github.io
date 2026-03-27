@@ -30,34 +30,37 @@
     .top-banner h1 { color: white; font-size: 2.5rem; text-transform: uppercase; }
     .top-banner h2 { color: #aaa; font-size: 1.1rem; font-weight: normal; }
 
+    /* --- Container principal --- */
+    .landing-layout {
+      position: relative; /* VERROU : l'image se basera sur ce cadre */
+      width: 100%;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
     /* --- Photo de profil : Forcée en haut à droite --- */
     .profile-photo {
-      position: absolute; /* Positionnement fixe par rapport au parent */
-      top: 30px; /* Espace depuis le haut */
-      right: 30px; /* Espace depuis la droite */
-      z-index: 100; /* Assure qu'elle passe au-dessus du carrousel si besoin */
+      position: absolute; 
+      top: 20px; 
+      right: 20px;
+      z-index: 999; /* Toujours au-dessus */
     }
 
     .profile-photo img {
-      width: 160px; /* Taille de la photo */
-      height: 160px;
-      border: 4px solid var(--pink-base); /* Bordure rose */
-      object-fit: cover;
-      box-shadow: 0 0 25px rgba(255, 105, 180, 0.4);
+      width: 150px;
+      height: 150px;
+      border: 3px solid #ff69b4;
       border-radius: 12px;
+      object-fit: cover;
     }
 
-    /* Ajustement mobile pour la photo */
-    @media (max-width: 800px) {
-      .profile-photo {
-        position: relative; /* Repasse en flux normal sur mobile */
-        top: 0; right: 0;
-        margin: 20px auto;
-        text-align: center;
-      }
-      .top-banner { text-align: center; margin-left: 0; }
+    /* --- Ajustement pour éviter que le titre ne touche la photo --- */
+    .top-banner {
+      padding-top: 20px;
+      padding-left: 20px;
+      max-width: calc(100% - 180px); /* Empêche le texte de passer SOUS la photo */
     }
-
     /* --- Section Carrousel (Centre) --- */
     .project-carousel {
       flex: 1; 
