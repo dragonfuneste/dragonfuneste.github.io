@@ -146,11 +146,11 @@ hobbies:
   - name: "plant gardening"
     image: "assets/image/myself/plant.png"
   - name: "cat lover"
-    cat: "assets/image/myself/cat.png"
+    image: "assets/image/myself/cat.png"
   - name: "Rugby"
-    cat: "assets/image/myself/rubgy.png"
+    image: "assets/image/myself/rubgy.png"
   - name: "Robots"
-    cat: "assets/image/myself/robots.png"
+    image: "assets/image/myself/robots.png"
 
 achievements:
   - name: "Complete my Ingeneering degree coming from the bottom of the Baccalaureate of france for doing high level study"
