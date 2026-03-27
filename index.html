@@ -1,14 +1,14 @@
 ---
-layout: null
+layout: default
 ---
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ site.data.profile.profile.name }} - PhD Portfolio</title>
+  <title>{{ site.data.profile.info.name }} - Portfolio</title>
   
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
   <link rel="stylesheet" href="assets/css/home.css" /> 
 </head>
 
@@ -17,12 +17,12 @@ layout: null
 
   <main class="landing-layout">
     <header class="top-banner">
-      <h1>{{ site.data.profile.profile.name }}</h1>
-      <h2 style="color: var(--pink-base);">{{ site.data.profile.profile.title }}</h2>
+      <h1>{{ site.data.profile.info.name }}</h1>
+      <h2>{{ site.data.profile.info.title }}</h2>
     </header>
 
     <div class="profile-photo">
-      <img src="{{ site.data.profile.profile.photo }}" alt="Photo">
+      <img src="{{ site.data.profile.info.photo }}" alt="Photo de {{ site.data.profile.info.name }}">
     </div>
 
     <div class="project-carousel">
@@ -30,20 +30,19 @@ layout: null
 
       <div class="carousel">
         <div class="carousel-track">
-          {% for exp in site.data.profile.experience %}
-            <img src="{{ exp.logo }}" alt="{{ exp.company }}">
+          {% for item in site.data.profile.carousel_images %}
+            <img src="{{ item.src }}" alt="{{ item.alt }}">
           {% endfor %}
           
-          {% for exp in site.data.profile.experience %}
-            <img src="{{ exp.logo }}" alt="{{ exp.company }}">
+          {% for item in site.data.profile.carousel_images %}
+            <img src="{{ item.src }}" alt="{{ item.alt }}">
           {% endfor %}
         </div>
       </div>
     </div>
   </main>
 
-  {% include menu.html %}
-
+  <script src="assets/js/menu.js"></script>
   <script src="assets/js/bubble_script.js"></script>
 </body>
 </html>
