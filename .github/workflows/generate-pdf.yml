@@ -1,4 +1,4 @@
-name: Generate CV PDF from about.html
+name: Generate CV PDF
 
 on:
   push:
@@ -6,23 +6,16 @@ on:
       - main
     paths:
       - 'about.html'
-      - 'assets/css/**'
 
 jobs:
   convert_to_pdf:
     runs-on: ubuntu-latest
-    # CRUCIAL : Donne les permissions d'écriture pour le push final
     permissions:
       contents: write
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4 # Version plus récente
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20' # Node 20 est plus stable pour Puppeteer aujourd'hui
+        uses: actions/checkout@v4
 
       - name: Install Puppeteer
         run: npm install puppeteer
@@ -30,32 +23,54 @@ jobs:
       - name: Generate PDF
         run: |
           node -e "const puppeteer = require('puppeteer'); (async () => {
-            // Ajout de --no-sandbox pour que ça tourne sur le serveur GitHub
-            const browser = await puppeteer.launch({ 
-              args: ['--no-sandbox', '--disable-setuid-sandbox'] 
-            });
+            const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
             const page = await browser.newPage();
-            
-            // On charge le fichier
             await page.goto('file://' + process.cwd() + '/about.html', {waitUntil: 'networkidle0'});
             
-            // Style forcé pour le PDF (Fond blanc, texte noir, cache le menu)
+            // CSS FORCÉ POUR LE STYLE "CV PAPIER"
             await page.addStyleTag({content: \`
-              body { background: white !important; color: black !important; }
-              .about-container { margin: 0 !important; padding: 0 !important; max-width: 100% !important; }
-              .cv-header { background: #f9f9f9 !important; border-bottom: 2px solid black !important; color: black !important; }
-              .header-info h1, .section-title { color: black !important; border-color: black !important; }
-              .tag { border-color: black !important; color: black !important; }
-              .glass-card { background: none !important; border: 1px solid #ddd !important; box-shadow: none !important; }
-              .bottom-menu, #bubble-container, .pdf-download { display: none !important; }
-              .header-contact, .header-contact a { color: black !important; border-color: black !important; }
+              /* Reset complet pour l'impression */
+              @page { size: A4; margin: 1cm; }
+              body { 
+                background: white !important; 
+                color: black !important; 
+                font-family: Arial, sans-serif !important;
+              }
+              .about-container { 
+                margin: 0 !important; 
+                padding: 0 !important; 
+                max-width: 100% !important; 
+                box-shadow: none !important;
+              }
+              /* On rend le header propre (texte noir sur fond gris très clair ou blanc) */
+              .cv-header { 
+                background: #f4f4f4 !important; 
+                border-bottom: 2px solid #000 !important; 
+                color: black !important;
+                backdrop-filter: none !important;
+              }
+              h1, .section-title { color: black !important; border-color: black !important; }
+              .tag { border: 1px solid black !important; color: black !important; background: white !important; }
+              .glass-card { 
+                background: white !important; 
+                border: 1px solid #ccc !important; 
+                color: black !important;
+                margin-bottom: 15px !important;
+              }
+              .cv-item-title { color: black !important; }
+              .cv-item-subtitle, .cv-item-date { color: #333 !important; }
+              .cv-item-details { color: #555 !important; }
+              
+              /* CACHE LES ÉLÉMENTS INTERACTIFS DU SITE */
+              .bottom-menu, #bubble-container, .pdf-download, .contact-form-section { 
+                display: none !important; 
+              }
             \`});
 
             await page.pdf({
               path: 'CV_Loubet_Bonino_Gregory.pdf',
               format: 'A4',
-              printBackground: true,
-              margin: { top: '1cm', right: '1cm', bottom: '1cm', left: '1cm' }
+              printBackground: true
             });
             await browser.close();
           })();"
@@ -65,10 +80,5 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add CV_Loubet_Bonino_Gregory.pdf
-          # On vérifie s'il y a des changements pour éviter de faire planter l'action
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Automated CV PDF generation [skip ci]"
-            git push
-          fi
+          git commit -m "Update CV PDF [skip ci]" || echo "No changes"
+          git push
