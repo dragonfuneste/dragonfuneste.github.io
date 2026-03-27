@@ -3,52 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grégory Loubet-Bonino</title>
+  <title>Grégory Loubet-Bonino - PhD Student</title>
+  
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/home.css" />
+
+  <style>
+    /* --- Styles Spécifiques pour corriger l'index --- */
+    
+    /* Global layout container */
+    .landing-layout {
+      position: relative; /* Important pour le positionnement absolu de la photo */
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden; /* Empêche le scroll horizontal */
+    }
+
+    /* Top banner area for context */
+    .top-banner {
+      margin-top: 40px;
+      margin-left: 40px;
+      z-index: 5;
+    }
+    .top-banner h1 { color: white; font-size: 2.5rem; text-transform: uppercase; }
+    .top-banner h2 { color: #aaa; font-size: 1.1rem; font-weight: normal; }
+
+    /* --- Photo de profil : Forcée en haut à droite --- */
+    .profile-photo {
+      position: absolute; /* Positionnement fixe par rapport au parent */
+      top: 30px; /* Espace depuis le haut */
+      right: 30px; /* Espace depuis la droite */
+      z-index: 100; /* Assure qu'elle passe au-dessus du carrousel si besoin */
+    }
+
+    .profile-photo img {
+      width: 160px; /* Taille de la photo */
+      height: 160px;
+      border: 4px solid var(--pink-base); /* Bordure rose */
+      object-fit: cover;
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.4);
+      border-radius: 12px;
+    }
+
+    /* Ajustement mobile pour la photo */
+    @media (max-width: 800px) {
+      .profile-photo {
+        position: relative; /* Repasse en flux normal sur mobile */
+        top: 0; right: 0;
+        margin: 20px auto;
+        text-align: center;
+      }
+      .top-banner { text-align: center; margin-left: 0; }
+    }
+
+    /* --- Section Carrousel (Centre) --- */
+    .project-carousel {
+      flex: 1; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-top: 60px; /* Espace pour ne pas gêner la photo/banner */
+      margin-bottom: 120px; /* Laisse de la place pour le menu fixe */
+      z-index: 10;
+    }
+
+    .title {
+      color: var(--pink-base);
+      font-size: 2rem;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Carrousel stylisé */
+    .carousel {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 20px 0;
+      border-top: 1px solid rgba(255, 105, 180, 0.2);
+      border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+    }
+
+    .carousel-track {
+      display: inline-flex;
+      gap: 20px;
+      animation: scroll-left 30s linear infinite; /* Vitesse ajustable */
+    }
+
+    .carousel-track img {
+      width: 350px; /* Images larges */
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+      border: 2px solid transparent;
+      transition: 0.3s;
+    }
+    
+    .carousel-track img:hover {
+        border-color: var(--pink-base);
+        transform: scale(1.03);
+    }
+
+    /* Animation de défilement */
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); } /* Doit correspondre à la moitié de la largeur du track si les images sont dupliquées */
+    }
+
+  </style>
 </head>
 
 <body>
 
   <div id="bubble-container"></div>
 
-  <header class="top-banner">
-    <h1>Grégory Loubet--Bonino</h1>
-    <h2>PhD Student in Software Engineering — Embedded Systems & Robotics</h2>
-  </header>
-
   <main class="landing-layout">
+
+    <header class="top-banner">
+      <h1>Grégory Loubet--Bonino</h1>
+      <h2>PhD Student in Software Engineering — Embedded Systems & Robotics</h2>
+    </header>
 
     <div class="profile-photo">
       <img src="assets/image/index/myself.png" alt="Photo de Grégory">
     </div>
 
-    <!-- Carrousel central a refaire je veux que ca soit un truc dynamique qui tourne si y faut on peut rajouter un fichier js pour le rendre dynamique-->
     <div class="project-carousel">
-      <h1 class="title">Mes Projets</h1>
+      <h1 class="title">My Projects</h1>
 
       <div class="carousel">
         <div class="carousel-track">
-          <img src="assets/image/index/image-example.png" alt="Projet 1">
-          <img src="assets/image/index/image-example.png" alt="Projet 2">
-          <img src="assets/image/index/image-example.png" alt="Projet 3">
-          <img src="assets/image/index/image-example.png" alt="Projet 4">
-          <img src="assets/image/index/image-example.png" alt="Projet 4">
-          <img src="assets/image/index/image-example.png" alt="Projet 4">
-          <img src="assets/image/index/image-example.png" alt="Projet 4">
+          <img src="assets/image/index/image-example.png" alt="Project 1">
+          <img src="assets/image/index/image-example.png" alt="Project 2">
+          <img src="assets/image/index/image-example.png" alt="Project 3">
+          <img src="assets/image/index/image-example.png" alt="Project 4">
+          <img src="assets/image/index/image-example.png" alt="Project 1">
+          <img src="assets/image/index/image-example.png" alt="Project 2">
+          <img src="assets/image/index/image-example.png" alt="Project 3">
+          <img src="assets/image/index/image-example.png" alt="Project 4">
         </div>
       </div>
     </div>
 
   </main>
 
-  <!-- Menu du bas -->
   <footer class="bottom-menu">
     <a href="about.html" class="menu-box">About Me</a>
     <a href="research.html" class="menu-box">Research</a>
     <a href="projects.html" class="menu-box">Projects</a>
     <a href="contact.html" class="menu-box">Contact</a>
-    <a href="Repository.html" class="menu-box">Repository</a>
+    <a href="repository.html" class="menu-box">Repository</a>
   </footer>
 
   <script src="assets/js/script.js"></script>
