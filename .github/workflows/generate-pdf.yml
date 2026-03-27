@@ -17,54 +17,34 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Install Puppeteer
-        run: npm install puppeteer
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24' # Mise à jour pour 2026
+
+      - name: Install Dependencies
+        run: |
+          npm install puppeteer
+          # On s'assure que Chrome est bien installé pour Puppeteer
+          npx puppeteer browsers install chrome
 
       - name: Generate PDF
         run: |
           node -e "const puppeteer = require('puppeteer'); (async () => {
-            const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+            const browser = await puppeteer.launch({ 
+              args: ['--no-sandbox', '--disable-setuid-sandbox'] 
+            });
             const page = await browser.newPage();
             await page.goto('file://' + process.cwd() + '/about.html', {waitUntil: 'networkidle0'});
             
-            // CSS FORCÉ POUR LE STYLE "CV PAPIER"
             await page.addStyleTag({content: \`
-              /* Reset complet pour l'impression */
               @page { size: A4; margin: 1cm; }
-              body { 
-                background: white !important; 
-                color: black !important; 
-                font-family: Arial, sans-serif !important;
-              }
-              .about-container { 
-                margin: 0 !important; 
-                padding: 0 !important; 
-                max-width: 100% !important; 
-                box-shadow: none !important;
-              }
-              /* On rend le header propre (texte noir sur fond gris très clair ou blanc) */
-              .cv-header { 
-                background: #f4f4f4 !important; 
-                border-bottom: 2px solid #000 !important; 
-                color: black !important;
-                backdrop-filter: none !important;
-              }
-              h1, .section-title { color: black !important; border-color: black !important; }
-              .tag { border: 1px solid black !important; color: black !important; background: white !important; }
-              .glass-card { 
-                background: white !important; 
-                border: 1px solid #ccc !important; 
-                color: black !important;
-                margin-bottom: 15px !important;
-              }
-              .cv-item-title { color: black !important; }
-              .cv-item-subtitle, .cv-item-date { color: #333 !important; }
-              .cv-item-details { color: #555 !important; }
-              
-              /* CACHE LES ÉLÉMENTS INTERACTIFS DU SITE */
-              .bottom-menu, #bubble-container, .pdf-download, .contact-form-section { 
-                display: none !important; 
-              }
+              body { background: white !important; color: black !important; }
+              .about-container { margin: 0 !important; max-width: 100% !important; }
+              .cv-header { background: #f4f4f4 !important; border-bottom: 2px solid black !important; color: black !important; }
+              h1, .section-title, .cv-item-title { color: black !important; }
+              .glass-card { background: white !important; border: 1px solid #ddd !important; }
+              .bottom-menu, #bubble-container, .pdf-download, .contact-form-section { display: none !important; }
             \`});
 
             await page.pdf({
@@ -80,5 +60,9 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add CV_Loubet_Bonino_Gregory.pdf
-          git commit -m "Update CV PDF [skip ci]" || echo "No changes"
-          git push
+          if git diff --staged --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update CV PDF [skip ci]"
+            git push
+          fi
