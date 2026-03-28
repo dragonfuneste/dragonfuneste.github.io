@@ -16,10 +16,13 @@
 }
 
 /* --- Carte de Profil --- */
-.profile-card {
-  border: 1px solid var(--glass-border) !important;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
-  transition: border-color 0.3s ease;
+/* --- Taille de l'image dans la page About --- */
+.profile-card img {
+  width: 180px;  /* Ajuste cette valeur selon tes goûts */
+  height: 180px;
+  object-fit: cover; /* Pour ne pas déformer l'image */
+  border-radius: 12px; /* Optionnel : pour arrondir les angles */
+  border: 3px solid var(--pink-base); /* Rappel de ton style */
 }
 
 .profile-card:hover {
