@@ -1,0 +1,92 @@
+/* --- Variables spécifiques à la page About --- */
+.about-wrapper {
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 105, 180, 0.2);
+  --hover-pink: rgba(255, 105, 180, 0.1);
+}
+
+/* --- Mise en page globale --- */
+.about-wrapper {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Carte de Profil --- */
+.profile-card {
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+  transition: border-color 0.3s ease;
+}
+
+.profile-card:hover {
+  border-color: var(--pink-base) !important;
+}
+
+.profile-text h1 {
+  background: linear-gradient(to right, #fff, var(--pink-base));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- Entrées CV (Expérience & Education) --- */
+.cv-entry {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent !important;
+  background: var(--glass-bg) !important;
+}
+
+.cv-entry:hover {
+  border-color: var(--glass-border) !important;
+  background: var(--hover-pink) !important;
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.1);
+}
+
+.entry-logo {
+  transition: transform 0.3s ease;
+  filter: grayscale(20%);
+}
+
+.cv-entry:hover .entry-logo {
+  transform: scale(1.1) rotate(5deg);
+  filter: grayscale(0%);
+}
+
+/* --- Grille de Hobbies --- */
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 20px;
+}
+
+.hobby-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px !important;
+  border: 1px solid var(--glass-border) !important;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hobby-box:hover {
+  background: var(--pink-base) !important;
+  transform: translateY(-10px);
+}
+
+.hobby-box:hover p {
+  color: #0b0b0b !important;
+  font-weight: bold;
+}
+
+.hobby-box img {
+  transition: filter 0.3s ease;
+}
+
+.hobby-box:hover img {
+  filter: brightness(0); /* L'icône devient noire sur fond rose */
+}
