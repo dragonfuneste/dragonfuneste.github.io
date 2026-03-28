@@ -1,0 +1,85 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects – {{ site.data.profile.profile.name }}</title>
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/projects.css">
+</head>
+<body class="projects-page">
+
+  <div id="bubble-container"></div>
+
+  <main class="projects-wrapper">
+    <header class="projects-header">
+      <h1 class="title">Technical Portfolio</h1>
+      
+      <div class="filter-container">
+        <button class="filter-btn active" onclick="filterProjects('all', event)">All</button>
+        {% for category in site.data.profile.projects %}
+          <button class="filter-btn" onclick="filterProjects('{{ category[0] }}', event)">
+            {{ category[0] | replace: '_', ' ' }}
+          </button>
+        {% endfor %}
+      </div>
+    </header>
+
+    <div class="projects-grid">
+      {% for category in site.data.profile.projects %}
+        {% for project in category[1] %}
+        
+        {% comment %} Sélection de la vignette {% endcomment %}
+        {% assign thumb = "" %}
+        {% if project.images %}{% assign thumb = project.images[0] %}
+        {% elsif project.image %}{% assign thumb = project.image %}{% endif %}
+
+        {% comment %} L'article devient cliquable pour ouvrir la modale {% endcomment %}
+        <article class="project-card" data-category="{{ category[0] }}" 
+                 onclick='openModal(
+                    {{ project.name | jsonify }}, 
+                    {{ project.detail_long | default: project.details | jsonify }}, 
+                    {{ project.skill | jsonify }}, 
+                    {{ project.context | jsonify }}, 
+                    {{ project.images | join: "," | jsonify }},
+                    {{ project.videos | join: "," | jsonify }}
+                 )'>
+          
+          <div class="project-img-container">
+            {% if thumb != "" and thumb != nil %}
+              <img src="{{ thumb }}" alt="{{ project.name }}">
+            {% else %}
+              <div class="no-img">NO PREVIEW</div>
+            {% endif %}
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>{{ project.name }}</h3>
+            <p class="project-context-label">{{ project.context }}</p>
+            <div class="card-footer">
+              <span class="category-tag">{{ category[0] | replace: '_', ' ' }}</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </main>
+
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <div id="modalBody">
+        </div>
+    </div>
+  </div>
+
+  {% include menu.html %}
+  
+  <script src="assets/js/bubble_script.js"></script>
+  <script src="assets/js/projects_logic.js"></script>
+</body>
+</html>

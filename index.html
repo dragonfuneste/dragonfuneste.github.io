@@ -29,15 +29,34 @@ layout: null
 
       <div class="carousel">
         <div class="carousel-track">
-          {% for item in site.data.profile.carousel_images %}
-            <img src="{{ item.src }}" alt="{{ item.alt }}">
+          {% for category in site.data.profile.projects %}
+            {% for project in category[1] %}
+              
+              {% comment %} Boucle sur la liste d'images du projet {% endcomment %}
+              {% for img_path in project.images %}
+                <img src="{{ img_path }}" alt="{{ project.name }}">
+              {% endfor %}
+              
+              {% comment %} Cas de secours si tu as encore des projets avec une seule clé 'image' {% endcomment %}
+              {% if project.image %}
+                <img src="{{ project.image }}" alt="{{ project.name }}">
+              {% endif %}
+
+            {% endfor %}
           {% endfor %}
-          
-          {% for item in site.data.profile.carousel_images %}
-            <img src="{{ item.src }}" alt="{{ item.alt }}">
+
+          {% comment %} REPETITION POUR L'EFFET INFINI {% endcomment %}
+          {% for category in site.data.profile.projects %}
+            {% for project in category[1] %}
+              {% for img_path in project.images %}
+                <img src="{{ img_path }}" alt="{{ project.name }}">
+              {% endfor %}
+              {% if project.image %}
+                <img src="{{ project.image }}" alt="{{ project.name }}">
+              {% endif %}
+            {% endfor %}
           {% endfor %}
         </div>
-      </div>
     </div>
   </main>
 

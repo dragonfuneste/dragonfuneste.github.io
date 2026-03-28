@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects – Grégory Loubet-Bonino</title>
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/projects.css">
+</head>
+<body class="projects-page">
+
+  <div id="bubble-container"></div>
+
+  <main class="projects-wrapper">
+    <header class="projects-header">
+      <h1 class="title">Technical Portfolio</h1>
+      
+      <div class="filter-container">
+        <button class="filter-btn active" onclick="filterProjects('all', event)">All</button>
+        
+          <button class="filter-btn" onclick="filterProjects('robotics', event)">
+            robotics
+          </button>
+        
+          <button class="filter-btn" onclick="filterProjects('embedded_linux', event)">
+            embedded linux
+          </button>
+        
+          <button class="filter-btn" onclick="filterProjects('fpga_asic', event)">
+            fpga asic
+          </button>
+        
+          <button class="filter-btn" onclick="filterProjects('Electronics', event)">
+            Electronics
+          </button>
+        
+          <button class="filter-btn" onclick="filterProjects('neural_networks', event)">
+            neural networks
+          </button>
+        
+          <button class="filter-btn" onclick="filterProjects('security', event)">
+            security
+          </button>
+        
+          <button class="filter-btn" onclick="filterProjects('microelectronics', event)">
+            microelectronics
+          </button>
+        
+          <button class="filter-btn" onclick="filterProjects('software_engineering', event)">
+            software engineering
+          </button>
+        
+      </div>
+    </header>
+
+    <div class="projects-grid">
+      
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="robotics" 
+                 onclick='openModal(
+                    "French Robotics Cup robot building", 
+                    "Designed and built robots for the national competition. Rebuilt the club after the COVID crisis and achieved significant results in the final year.", 
+                    "Assembly, C, C++, Solidworks, EasyEDA, Altium, Soldering, STM32, ESP32, Raspi, Motorisation algorithm, AI", 
+                    "Association project - Team member, supervisor, technical expert - 3 years", 
+                    "assets/image/technical/robot_P&T.png,assets/image/technical/robot_P&T2.png",
+                    "assets/image/technical/Video_Robot_1.mp4,assets/image/technical/Video_Robot_2.mp4"
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <img src="assets/image/technical/robot_P&T.png" alt="French Robotics Cup robot building">
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>French Robotics Cup robot building</h3>
+            <p class="project-context-label">Association project - Team member, supervisor, technical expert - 3 years</p>
+            <div class="card-footer">
+              <span class="category-tag">robotics</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="robotics" 
+                 onclick='openModal(
+                    "Real-time robot with FreeRTOS", 
+                    "Built a real-time application using an IMU for aircraft use-cases. Optimized position and temperature data acquisition using RTOS tasks instead of standard interrupts.", 
+                    "STM32, IMU sensor, FreeRTOS", 
+                    "School project - 3rd year of Engineering", 
+                    "",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <div class="no-img">NO PREVIEW</div>
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>Real-time robot with FreeRTOS</h3>
+            <p class="project-context-label">School project - 3rd year of Engineering</p>
+            <div class="card-footer">
+              <span class="category-tag">robotics</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="robotics" 
+                 onclick='openModal(
+                    "Personal Robots", 
+                    "Built several prototypes including a walking robot, a robotics learning kit, a BB8-style robot, and an automated Nerf turret.", 
+                    "Raspberry Pi, STM32, ESP32", 
+                    "Personal project", 
+                    "assets/image/technical/Asmodeus.png,assets/image/technical/walking_robot.png,assets/image/technical/BB8.png,assets/image/technical/nerf_turret.png",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <img src="assets/image/technical/Asmodeus.png" alt="Personal Robots">
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>Personal Robots</h3>
+            <p class="project-context-label">Personal project</p>
+            <div class="card-footer">
+              <span class="category-tag">robotics</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+      
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="embedded_linux" 
+                 onclick='openModal(
+                    "Linux drivers development", 
+                    "Developed custom drivers to understand kernel architecture. Applied them to room automation and explored real-time kernel patches for improved efficiency.", 
+                    "BeagleBone Black, Kernel C", 
+                    "School project - 3rd year of Engineering", 
+                    "",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <div class="no-img">NO PREVIEW</div>
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>Linux drivers development</h3>
+            <p class="project-context-label">School project - 3rd year of Engineering</p>
+            <div class="card-footer">
+              <span class="category-tag">embedded linux</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="embedded_linux" 
+                 onclick='openModal(
+                    "Educational robot for children", 
+                    "The robot communicated with a remote system via touch display. Replaced legacy PCB boards and developed simplified logic for children to understand robotics.", 
+                    "BeagleBone White, Linux Embedded", 
+                    "School project - 2nd year of Engineering", 
+                    "assets/image/technical/robot_for_children.png",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <img src="assets/image/technical/robot_for_children.png" alt="Educational robot for children">
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>Educational robot for children</h3>
+            <p class="project-context-label">School project - 2nd year of Engineering</p>
+            <div class="card-footer">
+              <span class="category-tag">embedded linux</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="embedded_linux" 
+                 onclick='openModal(
+                    "Custom Arcade Cabinet", 
+                    "Designed the cabinet in Solidworks. Created custom electronics to run arcade software efficiently as an alternative to expensive hardware at the time.", 
+                    "PCB design, Solidworks, C, 3D printing", 
+                    "Personal project", 
+                    "assets/image/technical/arcade.png",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <img src="assets/image/technical/arcade.png" alt="Custom Arcade Cabinet">
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>Custom Arcade Cabinet</h3>
+            <p class="project-context-label">Personal project</p>
+            <div class="card-footer">
+              <span class="category-tag">embedded linux</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+      
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="fpga_asic" 
+                 onclick='openModal(
+                    "VHDL Alarm clock", 
+                    "Implemented a complex VHDL project on a Cyclone V to understand digital design constraints and state machine implementation.", 
+                    "Cyclone V FPGA, Quartus, VHDL", 
+                    "School project - 2nd year of Engineering", 
+                    "",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <div class="no-img">NO PREVIEW</div>
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>VHDL Alarm clock</h3>
+            <p class="project-context-label">School project - 2nd year of Engineering</p>
+            <div class="card-footer">
+              <span class="category-tag">fpga asic</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="fpga_asic" 
+                 onclick='openModal(
+                    "Circuit simulation", 
+                    "Designed schematics and layouts, ran simulations, and performed characterization to generate .lib files and standard cell libraries.", 
+                    "Cadence Virtuoso", 
+                    "School project - 3rd year of Engineering", 
+                    "",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <div class="no-img">NO PREVIEW</div>
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>Circuit simulation</h3>
+            <p class="project-context-label">School project - 3rd year of Engineering</p>
+            <div class="card-footer">
+              <span class="category-tag">fpga asic</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+      
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="Electronics" 
+                 onclick='openModal(
+                    "pcb for sim steering wheel", 
+                    "Made the steering wheel pcb prototype for a startup", 
+                    "Easy Eda", 
+                    "Freelance project", 
+                    "",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <div class="no-img">NO PREVIEW</div>
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>pcb for sim steering wheel</h3>
+            <p class="project-context-label">Freelance project</p>
+            <div class="card-footer">
+              <span class="category-tag">Electronics</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="Electronics" 
+                 onclick='openModal(
+                    "pcb design and programation for quad", 
+                    "Made the pcb design and the programmation for an electric quad for a startup", 
+                    "KiCad", 
+                    "Freelance project", 
+                    "",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <div class="no-img">NO PREVIEW</div>
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>pcb design and programation for quad</h3>
+            <p class="project-context-label">Freelance project</p>
+            <div class="card-footer">
+              <span class="category-tag">Electronics</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="Electronics" 
+                 onclick='openModal(
+                    "pcb Verification and analysis", 
+                    "Verify that the Pcb design are righlty made and give some optimization possible before the production process", 
+                    "KiCad,Altium,Easy eda", 
+                    "Freelance project", 
+                    "",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <div class="no-img">NO PREVIEW</div>
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>pcb Verification and analysis</h3>
+            <p class="project-context-label">Freelance project</p>
+            <div class="card-footer">
+              <span class="category-tag">Electronics</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="Electronics" 
+                 onclick='openModal(
+                    "PID programation for plasma cutting machine", 
+                    "PID programation for plasma cutting machine for being able to pump the air around the machine", 
+                    "programation", 
+                    "Freelance project", 
+                    "",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <div class="no-img">NO PREVIEW</div>
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>PID programation for plasma cutting machine</h3>
+            <p class="project-context-label">Freelance project</p>
+            <div class="card-footer">
+              <span class="category-tag">Electronics</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+      
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="neural_networks" 
+                 onclick='openModal(
+                    "MNIST on FPGA", 
+                    "Implemented neural networks on a PYNQ board using Vivado and the FINN framework to understand hardware-level AI deployment.", 
+                    "Vivado, FINN, Pynq (Xilinx)", 
+                    "School project - 3rd year of Engineering", 
+                    "",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <div class="no-img">NO PREVIEW</div>
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>MNIST on FPGA</h3>
+            <p class="project-context-label">School project - 3rd year of Engineering</p>
+            <div class="card-footer">
+              <span class="category-tag">neural networks</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="neural_networks" 
+                 onclick='openModal(
+                    "STM32 and Raspi 3 NN optimization", 
+                    "Used a three-layer neural network to optimize robot decision-making in real-time environments.", 
+                    "Python, C++, Embedded AI", 
+                    "Personal Project - Team effort", 
+                    "",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <div class="no-img">NO PREVIEW</div>
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>STM32 and Raspi 3 NN optimization</h3>
+            <p class="project-context-label">Personal Project - Team effort</p>
+            <div class="card-footer">
+              <span class="category-tag">neural networks</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="neural_networks" 
+                 onclick='openModal(
+                    "STM32 Camera NN", 
+                    "Attempted to deploy a VLM on a small STM32 for specific person detection to integrate with other personal security projects.", 
+                    "STM32, VLM, Computer Vision", 
+                    "Personal Project", 
+                    "",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <div class="no-img">NO PREVIEW</div>
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>STM32 Camera NN</h3>
+            <p class="project-context-label">Personal Project</p>
+            <div class="card-footer">
+              <span class="category-tag">neural networks</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+      
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="security" 
+                 onclick='openModal(
+                    "AES on FPGA", 
+                    "Implemented the AES algorithm on a CycloneV FPGA to study hardware-based cryptographic acceleration.", 
+                    "Cyclone V, Cryptography, VHDL", 
+                    "School project - 3rd year of Engineering", 
+                    "",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <div class="no-img">NO PREVIEW</div>
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>AES on FPGA</h3>
+            <p class="project-context-label">School project - 3rd year of Engineering</p>
+            <div class="card-footer">
+              <span class="category-tag">security</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="security" 
+                 onclick='openModal(
+                    "Embedded Cryptography on STM32", 
+                    "Evaluated cybersecurity algorithms to protect bare-metal robots. Acted as the defense lead in a red-team/blue-team simulation with 4 members.", 
+                    "STM32, RSA, AES, Bare-metal C", 
+                    "Personal Project - Team effort", 
+                    "",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <div class="no-img">NO PREVIEW</div>
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>Embedded Cryptography on STM32</h3>
+            <p class="project-context-label">Personal Project - Team effort</p>
+            <div class="card-footer">
+              <span class="category-tag">security</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+      
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="microelectronics" 
+                 onclick='openModal(
+                    "JLNWFET evaluation", 
+                    "Analyzed 3D transistor technology (Junctionless Nanowire Fet). Evaluated performance from the transistor level up to an N2C2 neural network, considering temperature and aging.", 
+                    "Cadence, Synopsys, Neural Networks", 
+                    "Internship at INL Laboratory", 
+                    "assets/image/technical/INL_internship.png",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <img src="assets/image/technical/INL_internship.png" alt="JLNWFET evaluation">
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>JLNWFET evaluation</h3>
+            <p class="project-context-label">Internship at INL Laboratory</p>
+            <div class="card-footer">
+              <span class="category-tag">microelectronics</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="microelectronics" 
+                 onclick='openModal(
+                    "Automation synthesis frameworks", 
+                    "Automated synthesis and simulation processes using Cadence and ModelSim to find optimal PMOS and NMOS parameter configurations.", 
+                    "Lisp, Verilog, ModelSim", 
+                    "Internship at INL Laboratory", 
+                    "",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <div class="no-img">NO PREVIEW</div>
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>Automation synthesis frameworks</h3>
+            <p class="project-context-label">Internship at INL Laboratory</p>
+            <div class="card-footer">
+              <span class="category-tag">microelectronics</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+      
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="software_engineering" 
+                 onclick='openModal(
+                    "UAV Log Dataset", 
+                    "Developed a comprehensive dataset of UAV logs to be used in a competitive software engineering framework.", 
+                    "ROS2, Python", 
+                    "PhD in SEG team", 
+                    "",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <div class="no-img">NO PREVIEW</div>
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>UAV Log Dataset</h3>
+            <p class="project-context-label">PhD in SEG team</p>
+            <div class="card-footer">
+              <span class="category-tag">software engineering</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+        
+        
+        
+        
+
+        
+        <article class="project-card" data-category="software_engineering" 
+                 onclick='openModal(
+                    "Dynamic Testcase Generator", 
+                    "Developed a tool to generate complex and evolving environments for testing robot swarm reliability.", 
+                    "ROS2, Gazebo, Evolutionary Algorithms", 
+                    "PhD in SEG team", 
+                    "",
+                    ""
+                 )'>
+          
+          <div class="project-img-container">
+            
+              <div class="no-img">NO PREVIEW</div>
+            
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>Dynamic Testcase Generator</h3>
+            <p class="project-context-label">PhD in SEG team</p>
+            <div class="card-footer">
+              <span class="category-tag">software engineering</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+        
+      
+    </div>
+  </main>
+
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <div id="modalBody">
+        </div>
+    </div>
+  </div>
+
+  <footer class="bottom-menu">
+    <a href="index.html" class="menu-box">Main Page</a>
+    <a href="about.html" class="menu-box">About Me</a>
+    <a href="art.html" class="menu-box">striking work of art</a>
+    <a href="projects.html" class="menu-box">Projects</a>
+    <a href="contact.html" class="menu-box">Contact</a>
+    <a href="repository.html" class="menu-box">Public Repository</a>
+</footer>
+  
+  <script src="assets/js/bubble_script.js"></script>
+  <script src="assets/js/projects_logic.js"></script>
+</body>
+</html>

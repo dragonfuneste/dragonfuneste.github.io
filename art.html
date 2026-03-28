@@ -1,0 +1,93 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Art & Inspiration – {{ site.data.profile.profile.name }}</title>
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/projects.css"> </head>
+<body class="projects-page">
+  <div id="bubble-container"></div>
+
+  <main class="projects-wrapper">
+    <header class="projects-header" style="text-align: center;">
+      <h1 class="title">Art & Philosophy</h1>
+      <p style="color: #666; margin-top: 10px;">A collection of works that shaped my vision of the world.</p>
+    </header>
+
+    <div class="projects-grid">
+      {% for art_item in site.data.profile.favorite_art %}
+        {% assign art = art_item[1] %}
+        {% assign art_name = art_item[0] | replace: '_', ' ' %}
+
+        <article class="project-card" 
+                 onclick='openArtModal(
+                    {{ art_name | jsonify }}, 
+                    {{ art.autor | jsonify }}, 
+                    {{ art.type | jsonify }}, 
+                    {{ art.reason | jsonify }}, 
+                    {{ art.link | jsonify }}
+                 )'>
+          
+          <div class="project-img-container">
+            <img src="{{ art.link }}" alt="{{ art_name }}">
+          </div>
+
+          <div class="project-info-minimal">
+            <h3>{{ art_name }}</h3>
+            <p class="project-context-label">{{ art.autor }}</p>
+            <div class="card-footer">
+              <span class="category-tag">{{ art.type }}</span>
+              <span class="plus-icon">+</span>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </main>
+
+  <div id="artModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeArtModal()">&times;</span>
+      <div id="artModalBody"></div>
+    </div>
+  </div>
+
+  {% include menu.html %}
+
+  <script src="assets/js/bubble_script.js"></script>
+  <script>
+    function openArtModal(title, author, type, reason, link) {
+      const modal = document.getElementById("artModal");
+      const body = document.getElementById("artModalBody");
+      
+      body.innerHTML = `
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="text-align: center;">
+             <img src="${link}" style="max-height: 400px; border-radius: 10px; border: 1px solid var(--pink-base);">
+          </div>
+          <div>
+            <h2 style="color: var(--pink-base); text-transform: uppercase;">${title}</h2>
+            <p style="margin-top: 5px;"><strong>By:</strong> ${author} | <em>${type}</em></p>
+            <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+            <p style="line-height: 1.8; color: #ddd; font-style: italic;">"${reason}"</p>
+          </div>
+        </div>
+      `;
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeArtModal() {
+      document.getElementById("artModal").style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+
+    window.onclick = function(e) {
+      if (e.target.id === "artModal") closeArtModal();
+    }
+  </script>
+</body>
+</html>
