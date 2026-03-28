@@ -46,7 +46,6 @@ body, html {
   100% { transform: translateY(-50px); opacity: 0; }
 }
 
-/* --- Menu de Navigation (Bottom) --- */
 .bottom-menu {
   position: fixed;
   bottom: 0;
