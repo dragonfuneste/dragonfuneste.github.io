@@ -14,7 +14,7 @@ html_env = Environment(loader=FileSystemLoader('templates'))
 def main():
     with open('_data/profileV2.yml', 'r', encoding='utf-8') as f:
         data = yaml.safe_load(f)
-
+    print(f"Clés trouvées dans le YAML : {data.keys()}") # Vérifie si 'education' est ici
     # 1. Générer le fichier .tex pour le CV Académique
     template_tex = latex_env.get_template('academic.tex')
     with open('cv_academic.tex', 'w', encoding='utf-8') as f:
