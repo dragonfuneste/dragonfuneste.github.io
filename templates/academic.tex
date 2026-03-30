@@ -1,0 +1,40 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{5pt}
+
+\begin{document}
+\begin{center}
+    {\huge \textbf{[[ profile.name ]]}} \\
+    [[ profile.location ]] | [[ profile.phone ]] | \href{mailto:[[ profile.email_pro ]]}{[[ profile.email_pro ]]} \\
+    \href{[[ profile.github ]]}{GitHub} | \href{[[ profile.linkedin ]]}{LinkedIn}
+\end{center}
+
+\section{Research Interests}
+[[ profile.summary_academic ]]
+
+\section{Education}
+{% for edu in education %}
+\textbf{[[ edu.school ]]} \hfill [[ edu.date ]] \\
+[[ edu.degree ]] -- [[ edu.details ]] \\
+{% endfor %}
+
+\section{Research \& Teaching Experience}
+{% for exp in experience %}
+\textbf{[[ exp.company ]]} | [[ exp.title ]] \hfill [[ exp.date ]] \\
+\textit{[[ exp.details_long ]]}
+\begin{itemize}
+    {% for ach in exp.achievements %} \item [[ ach ]] {% endfor %}
+\end{itemize}
+{% endfor %}
+
+\section{Selected Publications}
+{% for pub in publications %}
+[[ pub.title ]], [[ pub.venue ]], [[ pub.date ]]
+{% endfor %}
+
+\end{document}

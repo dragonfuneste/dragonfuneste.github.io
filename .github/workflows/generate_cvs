@@ -1,0 +1,78 @@
+name: Generate Multi-Style CVs
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'profile.yml'
+      - 'templates/**'
+      - 'generate.py'
+  workflow_dispatch: # Permet de lancer la génération manuellement
+
+jobs:
+  build_cvs:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Python Dependencies
+        run: |
+          pip install pyyaml jinja2
+
+      - name: Install TeX Live (for Academic CV)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended texlive-lang-french
+
+      - name: Install Playwright (for Engineering CV - HTML to PDF)
+        run: |
+          pip install playwright
+          playwright install chromium
+
+      - name: Run Generation Script
+        run: python generate.py
+
+      - name: Compile LaTeX to PDF
+        run: |
+          pdflatex -interaction=nonstopmode cv_academic.tex
+          # On le lance deux fois pour les références/index si besoin
+          pdflatex -interaction=nonstopmode cv_academic.tex
+
+      - name: Convert Engineering HTML to PDF
+        run: |
+          # Utilisation d'un petit script python rapide pour le PDF pro
+          python -c "from playwright.sync_api import sync_playwright; \
+          with sync_playwright() as p: \
+              browser = p.chromium.launch(); \
+              page = browser.new_page(); \
+              page.goto('file://${{ github.workspace }}/cv_engineering.html'); \
+              page.pdf(path='CV_Gregory_Engineering.pdf', format='A4', print_background=True); \
+              browser.close()"
+
+      - name: Upload Generated CVs
+        uses: actions/upload-artifact@v4
+        with:
+          name: Gregory_CVs
+          path: |
+            cv_academic.pdf
+            CV_Gregory_Engineering.pdf
+
+      - name: Deploy to Releases (Optional)
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            cv_academic.pdf
+            CV_Gregory_Engineering.pdf
+          tag_name: latest-cv
+          name: Latest Generated CVs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -121,7 +121,7 @@ projects:
       detail_long : "Designed schematics and layouts, ran simulations, and performed characterization to generate .lib files and standard cell libraries."
       context : "School project - 3rd year of Engineering"
   Electronics:
-    - name: "pcb for sim steering wheel"
+    - name: "pcb for simulator steering wheel"
       skill: "Easy Eda"
       details: "Made the steering wheel pcb prototype"
       detail_long : "Made the steering wheel pcb prototype for a startup"
@@ -137,6 +137,11 @@ projects:
       skill: "KiCad,Altium,Easy eda"
       details: "Verification of pcb"
       detail_long : "Verify that the Pcb design are righlty made and give some optimization possible before the production process"
+      context : "Freelance project"
+    - name: "pcb design for personal and industrial use"
+      skill: "KiCad"
+      details: "Made the pcb design "
+      detail_long : "Made pcb design for personal and industrial use, for example for a a motorisation board, a power supply board, a custom board for a CNC machine, a VA glasse small flew pcb"
       context : "Freelance project"
 
     - name: "PID programation for plasma cutting machine"
@@ -294,3 +299,71 @@ favorite_art:
     type: "Comics"
     reason: "The first comics I ever read in my life and I loved it. Also it made my thinking about madness change. Every one can be mad you just need to push them for it."
     link: "https://images.thalia.media/07/-/a50fa52304cc4c1e9070bfe9548944de/batman-killing-joke-alben-edition-gebundene-ausgabe-alan-moore.jpeg"
+
+languages:
+  - name: "French"
+    level: "Native"
+  - name: "English"
+    level: "Fluent"
+  - name: "Spanish"
+    level: "Intermediate"
+  - name: "Mandarin Chinese"
+    level: "Basic"
+
+teaching : 
+  - Title: "Dev Ops for CPS"
+    institution: "University of Bern"
+    date: "2025 - Present"
+    details: "Teaching assistant for the Dev Ops for CPS course, covering topics such as CI/CD, containerization, and deployment strategies for cyber-physical systems."
+    responsability : "Grading,supervision of projects, giving the lecture about how robots can localize themselves in a map and how to use ROS2 for that, giving the lecture about how to use Gazebo for that."
+    logo: "assets/image/myself/logo_team.png"
+
+  - Title: "Law, Autonomous Systems, and Ethics in robotics"
+    institution: "University of Bern"
+    date: "2025 - Present"
+    details: "Teaching assistant for a Law and software engineering course. I was in charger of giving lecture where I give some Industrial Experience, and few law that can be in robotics. I also made lectures where I explain how robot can moove, handle his uncertainty and localize themself. The challenge of it and how law is trying to catch up with that, giving  the ethical issues of autonomous systems and how to mitigate them."
+    responsability : "Just give two lecture of 2h30 around this subject"
+    logo: "assets/image/myself/logo_team.png"
+
+
+# Section de compétences optimisée pour génération de CV (Ingénieur & Académique)
+skills_summary:
+  languages:
+    - { name: "French", level: "Native", code: "FR" }
+    - { name: "English", level: "C1 - Professional", code: "EN" }
+    - { name: "German", level: "A2 - Basic", code: "DE" } # Important pour Bern/CH
+
+  programming:
+    - { name: "C/C++", level: "Advanced", context: "Embedded & Robotics", keywords: ["STL", "Bare-metal", "Real-time"] }
+    - { name: "Python", level: "Advanced", context: "AI & Scripting", keywords: ["PyTorch", "ROS2 APIs", "Data Analysis"] }
+    - { name: "VHDL/Verilog", level: "Intermediate", context: "FPGA & ASIC", keywords: ["Synthesis", "Simulation", "ModelSim"] }
+    - { name: "Lisp", level: "Beginer", context: "Automation frameworks", keywords: ["Cadence automation"] }
+
+  robotics_embedded:
+    - { name: "ROS2 & Gazebo", level: "Advanced", context: "PhD Research", keywords: ["Multi-robot", "Swarms", "Simulation"] }
+    - { name: "Hardware", level: "Expert", keywords: ["STM32", "ESP32", "Raspberry Pi", "BeagleBone"] }
+    - { name: "RTOS", level: "Intermediate", keywords: ["FreeRTOS", "Real-time scheduling", "Interrupts"] }
+    - { name: "Embedded Linux", level: "Advanced", keywords: ["Kernel Drivers", "BeagleBone White/Black", "Custom Distributions"] }
+
+  electronics_design:
+    - { name: "PCB Design", level: "Expert", tools: ["Altium", "KiCad", "EasyEDA"], keywords: ["Power supply", "High-speed", "Motor control"] }
+    - { name: "Prototyping", level: "Expert", keywords: ["Soldering", "3D Printing", "Solidworks", "Testing/Validation"] }
+    - { name: "Microelectronics", level: "Intermediate", tools: ["Cadence Virtuoso", "Synopsys"], keywords: ["JLNWFET", "Layout", "ASIC"] }
+
+  ai_cybersecurity:
+    - { name: "Embedded AI", level: "Intermediate", keywords: ["Neural Networks optimization", "VLM", "FPGA acceleration (FINN/Pynq)"] }
+    - { name: "Cybersecurity", level: "Beginer", keywords: ["AES Hardware implementation", "RSA", "Blue-team simulation"] }
+
+  soft_skills:
+    - { name: "Project Management", level: "Advanced", context: "Freelance & Robotics Club leadership" }
+    - { name: "Scientific Communication", level: "Intermediate", context: "Teaching & PhD Reporting" }
+    - { name: "Technical Consulting", level: "Advanced", context: "Freelance PCB verification" }
+    - { name: "Team Leadership", level: "Advanced", context: "Robotics Club rebuilding and leading to finals and make few projects as the project leader" }
+
+awards_and_achievements:
+  - { title: "Major de Promotion (1st Rank)", institution: "Lycee Gustave Eiffel", detail: "Ranked 1st out of the entire promotion in Prepa TSI" }
+  - { title: "Robotics Cup Finalist", institution: "Projet&Tech", detail: "Led the team to significant results after rebuilding the association post-COVID" }
+
+
+publications: 
+  - {title: "Analysis of JLNWFET for Neural Networks", venue: "Master Thesis - INL", date: "2025"}

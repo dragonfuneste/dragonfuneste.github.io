@@ -1,0 +1,263 @@
+profile:
+  name: "Grégory Loubet-Bonino"
+  title: "PhD Student in Software Engineering"
+  nationality: "French"
+  location: "Bern, CH"
+  phone: "+33 6 76 57 22 83"
+  email_pro : "gregory.loubet-bonino@unibe.ch"
+  email: "loubetgregoryb@gmail.com"
+  github: "https://github.com/dragonfuneste"
+  linkedin: "https://www.linkedin.com/in/grégory-loubet-bonino-969879225/"
+  website: "https://dragonfuneste.github.io/"
+  photo: "assets/image/myself/photo.png"
+  age: "23"
+  citation: "Become who you are, and be what only you can be. — Friedrich Nietzsche"
+  motivation : "Passionate about new technology. My background sparked a deep interest in electronics, which eventually led me to robotics. I am now striving to make one of these two fields my primary career path."
+  
+  summary_engineering: "Embedded Systems & Robotics Engineer with expertise in PCB design (Altium/KiCad) and autonomous systems (ROS2). Proven track record in rapid prototyping, from industrial automation to motorization algorithms, with a strong focus on hardware-software integration."
+  summary_academic: "PhD Researcher focused on Software Engineering and Robotics Safety. Specializing in self-adaptive systems and intelligent sensor monitoring. Combining a strong background in microelectronics simulation with modern AI frameworks (VLM/RL) to enhance swarm reliability."
+
+experience:
+  - title: "PhD Researcher – Innoguard Project"
+    company: "University of Bern - SEG Team"
+    date: "2025 - Present"
+    details_long: "As part of this PhD, I aim to make robots self-adaptive to dynamic environments using software engineering techniques to enhance safety. I am also working on making sensor monitoring more intelligent."
+    achievements:
+      - "Designing a self-adaptive framework for multi-robot swarms to enhance operational safety."
+      - "Implementing intelligent sensor monitoring using software engineering best practices."
+    keywords: ["Research", "Safety", "Self-adaptation", "Swarm Robotics"]
+    stack: ["ROS2", "Python", "Gazebo", "Linux"]
+    logo: "assets/image/myself/logo_team.png"
+    skills: ["ROS2", "VLM and RL AI", "Teaching", "Robotics"]
+
+  - title: "Internship in Microelectronics"
+    company: "INL Laboratory - FVLLMONTI"
+    date: "2025"
+    details_long: "Evaluation of different transistor structures (JLNWFET) through simulation. Design and measurement of temperature, voltage, and aging effects. Analysis of consequences at the neural network level."
+    achievements:
+      - "Successfully simulated and evaluated JLNWFET performance across variable physical constraints."
+      - "Bridged the gap between transistor-level physics and high-level neural network accuracy."
+    keywords: ["Nanotechnology", "Simulation", "Data Analysis", "R&D"]
+    stack: ["Cadence Virtuoso", "Verilog", "VHDL", "Lisp", "ModelSim"]
+    logo: "assets/image/myself/FVLLMONTI.png"
+    skills: ["Cadence", "Verilog", "VHDL", "Verilog A", "Synthesis"]
+
+  - title: "Internship as an Assistant Engineer"
+    company: "Guillemin, Dijon"
+    date: "2023"
+    details_long: "Design of mechanical parts for automation. Soldering, testing, and verifying PCBs used in industrial machinery."
+    achievements:
+      - "Optimized PCB verification workflow for industrial automation machinery."
+      - "Designed custom mechanical components ensuring seamless integration into existing lines."
+    keywords: ["Manufacturing", "Industrial Automation", "Quality Control"]
+    stack: ["Solidworks", "Manual Soldering", "Oscilloscope", "Multimeter"]
+    logo: "assets/image/myself/Guillemin.png"
+    skills: ["Solidworks", "Soldering", "Electronics"]
+
+  - title: "Freelance PCB Designer"
+    company: "GLB_Corps"
+    date: "2024 - 2026"
+    details_long: "Built custom PCBs for various clients (Electric quad startup, Simulator steering wheel, Plasma cutting vacuum system). Managed electronics design and business accounting."
+    achievements:
+      - "Delivered high-quality PCB prototypes for diverse startups (E-mobility, Simulation)."
+      - "Conducted full design reviews (DFM) to optimize production yields for industrial clients."
+    keywords: ["Freelance", "Entrepreneurship", "Hardware Design", "Client Management"]
+    stack: ["Altium Designer", "KiCad", "EasyEDA", "Project Management"]
+    logo: "assets/image/myself/Fiver.png"
+    skills: ["PCB design", "Embedded systems", "Company accounting"]
+
+projects:
+  robotics:
+    - name: "French Robotics Cup robot building"
+      context: "Association project - Team member, supervisor, technical expert - 3 years"
+      details: "Build robot for the French Robotics Cup with Projet&Tech team"
+      detail_long: "Designed and built robots for the national competition. Rebuilt the club after the COVID crisis and achieved significant results in the final year."
+      achievements:
+        - "Led the technical reconstruction of the club after a long hiatus."
+        - "Engineered motorization algorithms for precise autonomous navigation."
+      keywords: ["Leadership", "Real-time Control", "Full-stack Hardware"]
+      stack: ["STM32", "ESP32", "Raspberry Pi", "C/C++", "Solidworks", "Altium"]
+      skill: "Assembly, C, C++, Solidworks, EasyEDA, Altium, Soldering, STM32, ESP32, Raspi, Motorisation algorithm, AI"
+      images: ["assets/image/technical/robot_P&T.png", "assets/image/technical/robot_P&T2.png"]
+      videos: ["assets/image/technical/Video_Robot_1.mp4", "assets/image/technical/Video_Robot_2.mp4"]
+
+    - name: "Real-time robot with FreeRTOS"
+      context: "School project - 3rd year of Engineering"
+      details: "IMU integration for real-time aviation"
+      detail_long: "Built a real-time application using an IMU for aircraft use-cases. Optimized position and temperature data acquisition using RTOS tasks instead of standard interrupts."
+      achievements:
+        - "Reduced CPU overhead by implementing task-based sensor polling."
+        - "Guaranteed real-time constraints for critical IMU data processing."
+      keywords: ["RTOS", "Embedded Software", "Sensors"]
+      stack: ["FreeRTOS", "STM32", "C", "I2C/SPI"]
+      skill: "STM32, IMU sensor, FreeRTOS"
+
+    - name: "Personal Robots"
+      context: "Personal project"
+      details: "Various robot prototypes built for experimental purposes"
+      detail_long: "Built several prototypes including a walking robot, a robotics learning kit, a BB8-style robot, and an automated Nerf turret."
+      achievements:
+        - "Developed custom kinematics for a walking robot prototype."
+        - "Integrated vision systems for an automated Nerf defense turret."
+      keywords: ["Prototyping", "Rapid Manufacturing", "Innovation"]
+      stack: ["Python", "C++", "Raspberry Pi", "3D Printing"]
+      skill: "Raspberry Pi, STM32, ESP32"
+
+  embedded_linux:
+    - name: "Linux drivers development"
+      context: "School project - 3rd year of Engineering"
+      details: "Driver development for BeagleBone"
+      detail_long: "Developed custom drivers to understand kernel architecture. Applied them to room automation and explored real-time kernel patches for improved efficiency."
+      achievements:
+        - "Created low-level drivers for GPIO and sensor interfacing on Linux Kernel."
+        - "Implemented real-time patches to meet strict automation timing requirements."
+      keywords: ["Kernel", "Low-level", "System Programming"]
+      stack: ["C", "Linux Kernel", "BeagleBone Black"]
+      skill: "BeagleBone Black, Kernel C"
+
+  software_engineering: 
+    - name: "UAV Log Dataset"
+      context: "PhD in SEG team"
+      details: "Built a dataset for tool competition frameworks"
+      detail_long: "Developed a comprehensive dataset of UAV logs to be used in a competitive software engineering framework."
+      achievements:
+        - "Curated a high-fidelity dataset for UAV swarm behavioral analysis."
+        - "Established a baseline for robotic software testing competitions."
+      keywords: ["Open Data", "Dataset", "UAV"]
+      stack: ["ROS2", "Python", "SQL"]
+      skill: "ROS2, Python"
+
+    - name: "Dynamic Testcase Generator"
+      context: "PhD in SEG team"
+      details: "Challenging testcase generator for multi-robot systems"
+      detail_long: "Developed a tool to generate complex and evolving environments for testing robot swarm reliability."
+      achievements:
+        - "Automated the generation of diverse test scenarios using evolutionary algorithms."
+        - "Increased testing coverage for swarm-based obstacle avoidance logic."
+      keywords: ["Evolutionary Algorithms", "Testing", "Reliability"]
+      stack: ["ROS2", "Gazebo", "Python"]
+      skill: "ROS2, Gazebo, Evolutionary Algorithms"
+
+education:
+  - degree: "Engineering Degree"
+    school: "Telecom Saint-Etienne"
+    date: "2022-2025"
+    details: "Embedded Linux, Digital Design, Real-Time Programming, Cybersecurity, Embedded AI."
+    logo: "assets/image/myself/Telecom.png"
+  - degree: "Master 3EA (Dual-Degree)"
+    school: "Centrale Lyon"
+    date: "2024-2025"
+    details: "Computer Architecture, Embedded System Design, Sensors."
+    logo: "assets/image/myself/logo_ECL.png"
+  - degree: "DEUG - Prepa TSI"
+    school: "Lycee Gustave Eiffel Dijon"
+    date: "2020-2022"
+    details: "Ranked 1st of the promotion."
+    logo: "assets/image/myself/logo_Eiffel.png"
+
+languages:
+  - { name: "French", level: "Native", code: "FR" }
+  - { name: "English", level: "C1 - Professional", code: "EN" }
+  - { name: "Spanish", level: "Intermediate", code: "ES" }
+  - { name: "German", level: "A2 - Basic", code: "DE" }
+  - { name: "Mandarin Chinese", level: "Basic", code: "ZH" }
+
+favorite_art:
+  Demain_des_l_aube :
+    autor : "Victor Hugo"
+    type : "poem"
+    reason : "It is the first poem I learn by heart, I still know some verse. And it was to talk about the death. It so sad and also so, well written. It was the first time in my life I cried for art"
+    link : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUUNTa4J2k3R8uV_MEdvv2KM5tXARooTZtiQ&s"
+  Nightmare_Before_Christmas:
+    autor: "Tim Burton"
+    type: "film"
+    reason: "Because it was the first Disney where the villain wins. Jack is actually the one messing up Christmas, and he regrets nothing, so for me he is the villain. Also, I love the visual style of this film."
+    link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt_CSGDrOxkB4s62faGEj_ra2uJ6YPinEqgBk9HZ2nD8scr7JW"
+  Les_Miserables:
+    autor: "Victor Hugo"
+    type: "book"
+    reason: "This book made me realize that even the worst person can be redeemed and that stories are about human struggle, not just heroes and villains."
+    link: "https://m.media-amazon.com/images/I/81e1NPAQJmL._AC_UF1000,1000_QL80_.jpg"
+  Marie_Curie:
+    autor: "Marie Curie"
+    type: "scientist"
+    reason: "I am a huge fan of Marie Curie. She represents the most famous woman in science. Her story made me realize the historical unfairness towards women and reinforced my belief that everyone should be equal and respected."
+    link: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Marie_Curie_c._1920s.jpg/960px-Marie_Curie_c._1920s.jpg"
+  Leonardo_Da_Vinci:
+    autor: "Leonardo Da Vinci"
+    type: "scientist, artist, ingeneering, virtuoso"
+    reason: "It was literaly because of him that I wanted to become an Ingeener. When I was a child I saw Il etait une fois la vie series and they was the scientist who was design from him. And I loved this guys I love the idea of curiosity trying to find things and all. "
+    link: "https://hips.hearstapps.com/hmg-prod/images/portrait-of-leonardo-da-vinci-1452-1519-getty.jpg"
+  Beyond_Good_and_Evil:
+    autor: "Friedrich Nietzsche"
+    type: "book"
+    reason: "A nightmare to understand at first, but it changed my life completely. It made me reflect on my actions and heritage."
+    link: "https://m.media-amazon.com/images/I/71DOYQ78OUL._AC_UF1000,1000_QL80_.jpg"
+  Starry_Night:
+    autor: "Van Gogh"
+    type: "painting"
+    reason: "A beautiful feeling of emptiness. It represents the raw beauty of humanity in art."
+    link: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"
+  Frida_Kahlo :
+    autor: " "
+    type: "painter"
+    reason: "I love the painting of this artist, and how she represent herself on all of her painting"
+    link: "https://upload.wikimedia.org/wikipedia/commons/0/06/Frida_Kahlo%2C_by_Guillermo_Kahlo.jpg"
+  Wanderer_above_the_Sea_of_Fog:
+    autor: "Caspar David Friedrich"
+    type: "painting"
+    reason: "Represents freedom, dreams, and the fear of novelty."
+    link: "https://i.pinimg.com/736x/51/dd/58/51dd5851ff1b803bdd00c769af34a2f6.jpg"
+  One_Piece:
+    autor: "Eiichiro Oda"
+    type: "anime"
+    reason: "The world-building is incredible. I admire the dedication of the author over the years."
+    link: "https://m.media-amazon.com/images/S/pv-target-images/1595dc2f5bd3654d3d263b4fce60780b118bb31ee3af7a9dc9c99f89ba415934._SX1080_FMjpg_.jpg"
+  Eminence_in_Shadow:
+    autor: "Daisuke Aizawa"
+    type: "anime"
+    reason: "I do not know why I love this but I love it, so it is here!"
+    link: "https://m.media-amazon.com/images/I/81c0AcniEEL._UF1000,1000_QL80_.jpg"
+  Batman_The Killing Joke:
+    autor: "Alan Moore"
+    type: "Comics"
+    reason: "The first comics I ever read in my life and I loved it. Also it made my thinking about madness change. Every one can be mad you just need to push them for it."
+    link: "https://images.thalia.media/07/-/a50fa52304cc4c1e9070bfe9548944de/batman-killing-joke-alben-edition-gebundene-ausgabe-alan-moore.jpeg"
+
+teaching: 
+  - Title: "Dev Ops for CPS"
+    institution: "University of Bern"
+    date: "2025 - Present"
+    details: "Teaching assistant for the Dev Ops for CPS course, covering topics such as CI/CD, containerization, and deployment strategies for cyber-physical systems."
+    responsability: "Grading, supervision of projects, lecturing on ROS2 localization and Gazebo simulation."
+    logo: "assets/image/myself/logo_team.png"
+
+  - Title: "Law, Autonomous Systems, and Ethics in robotics"
+    institution: "University of Bern"
+    date: "2025 - Present"
+    details: "Teaching assistant for a Law and software engineering course."
+    responsability: "Delivered lectures on industrial experience, robot movement uncertainty, and ethical issues in autonomous systems."
+    logo: "assets/image/myself/logo_team.png"
+
+skills_summary:
+  programming:
+    - { name: "C/C++", level: "Advanced", keywords: ["STL", "Bare-metal", "Real-time"] }
+    - { name: "Python", level: "Advanced", keywords: ["PyTorch", "ROS2 APIs", "Data Analysis"] }
+    - { name: "VHDL/Verilog", level: "Intermediate", keywords: ["Synthesis", "Simulation", "ModelSim"] }
+  electronics:
+    - { name: "PCB Design", level: "Expert", tools: ["Altium", "KiCad", "EasyEDA"] }
+    - { name: "Microelectronics", level: "Intermediate", tools: ["Cadence Virtuoso"] }
+  robotics:
+    - { name: "ROS2 & Gazebo", level: "Advanced" }
+    - { name: "RTOS", level: "Intermediate", keywords: ["FreeRTOS"] }
+
+awards_and_achievements:
+  - { title: "Major de Promotion (1st Rank)", institution: "Lycee Gustave Eiffel", detail: "Ranked 1st out of the entire promotion in Prepa TSI" }
+  - { title: "Robotics Cup Finalist", institution: "Projet&Tech", detail: "Led the team to significant results after rebuilding the association post-COVID" }
+
+publications: 
+  - {title: "Analysis of JLNWFET for Neural Networks", venue: "Master Thesis - INL", date: "2025"}
+
+hobbies:
+  - { name: "Gardening", image: "assets/image/myself/plante.png" }
+  - { name: "Rugby", image: "assets/image/myself/USG.png" }
