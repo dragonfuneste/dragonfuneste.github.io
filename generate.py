@@ -12,7 +12,7 @@ latex_env = Environment(
 html_env = Environment(loader=FileSystemLoader('templates'))
 
 def main():
-    with open('profile.yml', 'r', encoding='utf-8') as f:
+    with open('_data/profileV2.yml', 'r', encoding='utf-8') as f:
         data = yaml.safe_load(f)
 
     # 1. Générer le fichier .tex pour le CV Académique
