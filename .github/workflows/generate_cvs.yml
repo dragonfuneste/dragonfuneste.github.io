@@ -46,16 +46,6 @@ jobs:
           # On le lance deux fois pour les références/index si besoin
           pdflatex -interaction=nonstopmode cv_academic.tex
 
-      - name: Convert Engineering HTML to PDF
-        run: |
-          # Utilisation d'un petit script python rapide pour le PDF pro
-          python -c "from playwright.sync_api import sync_playwright; \
-          with sync_playwright() as p: \
-              browser = p.chromium.launch(); \
-              page = browser.new_page(); \
-              page.goto('file://${{ github.workspace }}/cv_engineering.html'); \
-              page.pdf(path='CV_Gregory_Engineering.pdf', format='A4', print_background=True); \
-              browser.close()"
 
       - name: Upload Generated CVs
         uses: actions/upload-artifact@v4
@@ -63,7 +53,7 @@ jobs:
           name: Gregory_CVs
           path: |
             cv_academic.pdf
-            CV_Gregory_Engineering.pdf
+
 
       - name: Deploy to Releases (Optional)
         if: github.ref == 'refs/heads/main'

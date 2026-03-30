@@ -1,24 +1,26 @@
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
-# Configuration pour LaTeX (délimiteurs modifiés pour éviter les conflits avec LaTeX)
+# Configuration pour LaTeX
 latex_env = Environment(
-    block_start_string='((%', block_end_string='%))',
-    variable_start_string='[[', variable_end_string=']]',
+    block_start_string='((%', 
+    block_end_string='%))',
+    variable_start_string='[[', 
+    variable_end_string=']]',
     loader=FileSystemLoader('templates')
 )
 
-# Configuration pour HTML (délimiteurs standards)
-html_env = Environment(loader=FileSystemLoader('templates'))
-
 def main():
+    # Lecture du YAML
     with open('_data/profileV2.yml', 'r', encoding='utf-8') as f:
         data = yaml.safe_load(f)
-    print(f"Clés trouvées dans le YAML : {data.keys()}") # Vérifie si 'education' est ici
-    # 1. Générer le fichier .tex pour le CV Académique
+
+    # Génération du fichier .tex
     template_tex = latex_env.get_template('academic.tex')
-    with open('academic.tex', 'w', encoding='utf-8') as f:
+    with open('cv_academic.tex', 'w', encoding='utf-8') as f:
         f.write(template_tex.render(data))
+    
+    print("cv_academic.tex a été généré avec succès.")
 
 if __name__ == "__main__":
     main()
