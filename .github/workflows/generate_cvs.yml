@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'profile.yml'
+      - '_data/profileV2.yml'
       - 'templates/**'
       - 'generate.py'
   workflow_dispatch: # Permet de lancer la génération manuellement
