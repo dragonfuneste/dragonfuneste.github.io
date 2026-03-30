@@ -18,23 +18,25 @@
 [[ profile.summary_academic ]]
 
 \section{Education}
-{% for edu in education %}
+((% for edu in education %))
 \textbf{[[ edu.school ]]} \hfill [[ edu.date ]] \\
 [[ edu.degree ]] -- [[ edu.details ]] \\
-{% endfor %}
+((% endfor %))
 
 \section{Research \& Teaching Experience}
-{% for exp in experience %}
+((% for exp in experience %))
 \textbf{[[ exp.company ]]} | [[ exp.title ]] \hfill [[ exp.date ]] \\
 \textit{[[ exp.details_long ]]}
 \begin{itemize}
-    {% for ach in exp.achievements %} \item [[ ach ]] {% endfor %}
+    ((% for ach in exp.achievements %)) 
+    \item [[ ach ]] 
+    ((% endfor %))
 \end{itemize}
-{% endfor %}
+((% endfor %))
 
 \section{Selected Publications}
-{% for pub in publications %}
-[[ pub.title ]], [[ pub.venue ]], [[ pub.date ]]
-{% endfor %}
+((% for pub in publications %))
+[[ pub.title ]], [[ pub.venue ]], [[ pub.date ]] \\
+((% endfor %))
 
 \end{document}
