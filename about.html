@@ -1,0 +1,101 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me – {{ site.data.profile_eng.profile.name }}</title>
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/about.css">
+</head>
+
+<body class="about-page">
+  <div id="bubble-container"></div>
+
+  <div class="about-wrapper">
+    
+    <section class="profile-card">
+      <img src="{{ site.data.profile_eng.profile.photo }}" alt="Photo">
+      <div class="profile-text">
+        <h1>{{ site.data.profile_eng.profile.name }}</h1>
+        <p class="subtitle">{{ site.data.profile_eng.profile.title }}</p>
+        <p class="description">
+          Come from {{ site.data.profile_eng.profile.nationality }}, based in {{ site.data.profile_eng.profile.location }}. 
+          {{ site.data.profile_eng.profile.motivation }}
+        </p>
+        <blockquote class="citation">
+          "{{ site.data.profile_eng.profile.citation }}"
+        </blockquote>
+      </div>
+    </section>
+
+    <h2 class="section-header">Education</h2>
+    {% for edu in site.data.profile_eng.education %}
+    <div class="cv-entry">
+      <img src="{{ edu.logo }}" class="entry-logo" alt="logo">
+      <div class="entry-info">
+        <span class="entry-date">{{ edu.date }}</span>
+        <h3>{{ edu.degree }}</h3>
+        <h4>{{ edu.school }}</h4>
+        <p class="details">{{ edu.details }}</p>
+      </div>
+    </div>
+    {% endfor %}
+
+    <h2 class="section-header">Work & Experience</h2>
+    {% for exp in site.data.profile_eng.experience %}
+    <div class="cv-entry">
+      <img src="{{ exp.logo }}" class="entry-logo" alt="logo">
+      <div class="entry-info">
+        <span class="entry-date">{{ exp.date }}</span>
+        <h3>{{ exp.title }}</h3>
+        <h4>{{ exp.company }}</h4>
+        <p class="details">{{ exp.details_long }}</p>
+      </div>
+    </div>
+    {% endfor %}
+
+    <h2 class="section-header">Beyond Engineering</h2>
+    <div class="hobbies-grid">
+      {% for hobby in site.data.profile_eng.hobbies %}
+      <div class="hobby-box">
+        {% assign hobby_img = hobby.image | default: hobby.cat %}
+        {% if hobby_img and hobby_img != "" %}
+        <img src="{{ hobby_img }}" alt="{{ hobby.name }}">
+        {% endif %}
+        <p>{{ hobby.name }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <h2 class="section-header">Skills & Expertise</h2>
+    <div class="skills-section hobbies-grid">
+      {% for category in site.data.profile_eng.skills_summary %}
+        {% for skill in category[1] %}
+        <div class="hobby-box">
+          <p><strong>{{ skill.name }}</strong></p>
+          <p>
+            {% if skill.level == "Expert" %}★★★★★
+            {% elsif skill.level == "Advanced" %}★★★★☆
+            {% elsif skill.level == "Intermediate" %}★★★☆☆
+            {% else %}★★☆☆☆
+            {% endif %}
+          </p>
+        </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+
+  </div>
+
+  {% include menu.html %}
+
+  <script src="assets/js/bubble_script.js"></script>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Grégory Loubet-Bonino</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f172a; 
+            --accent: #2563eb;  
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-sidebar: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            margin: 0; color: var(--text-dark); background: #f1f5f9; font-size: 11px; 
+        }
+
+        .cv-container {
+            max-width: 840px; margin: 0 auto; background: var(--white);
+            display: grid; grid-template-columns: 260px 1fr; min-height: 29.7cm;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* --- SIDEBAR --- */
+        .sidebar { background: var(--bg-sidebar); padding: 25px 20px; border-right: 1px solid #e2e8f0; }
+        .profile-img { 
+            width: 120px; height: 120px; border-radius: 50%; object-fit: cover; 
+            border: 4px solid var(--white); box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin: 0 auto 15px; display: block;
+        }
+        .name { font-size: 1.3rem; font-weight: 800; color: var(--primary); text-align: center; margin-bottom: 5px; line-height: 1.2; }
+        .job-title { font-size: 0.8rem; color: var(--accent); font-weight: 700; text-align: center; margin-bottom: 20px; text-transform: uppercase; }
+
+        .sidebar-section { margin-bottom: 22px; }
+        .sidebar-section h3 { 
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;
+            color: var(--primary); border-bottom: 2px solid var(--accent);
+            padding-bottom: 4px; margin-bottom: 10px;
+        }
+
+        .contact-link { display: flex; align-items: center; text-decoration: none; color: var(--text-dark); margin-bottom: 7px; font-size: 0.75rem; }
+        .contact-link i { width: 20px; color: var(--accent); font-size: 0.9rem; }
+
+        .skill-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+        .skill-name { font-weight: 500; font-size: 0.75rem; }
+        .stars { color: var(--accent); font-size: 0.6rem; letter-spacing: 1px; }
+        .star-off { color: #cbd5e1; }
+
+        /* --- MAIN --- */
+        .main-content { padding: 30px 35px; }
+        .summary { 
+            font-size: 0.9rem; line-height: 1.5; color: var(--text-light); 
+            margin-bottom: 25px; border-left: 4px solid var(--accent); padding-left: 15px; font-style: italic;
+        }
+
+        .section-title { 
+            display: flex; align-items: center; gap: 8px; font-size: 1.05rem; 
+            font-weight: 800; color: var(--primary); text-transform: uppercase; 
+            margin: 20px 0 12px 0; border-bottom: 1px solid #eee; padding-bottom: 5px;
+        }
+        .section-title i { color: var(--accent); font-size: 0.9rem; }
+
+        .item { margin-bottom: 18px; }
+        .item-header { display: flex; justify-content: space-between; align-items: baseline; }
+        .item-role { font-weight: 700; font-size: 0.95rem; color: var(--primary); }
+        .item-date { font-size: 0.75rem; font-weight: 700; color: var(--accent); background: #eff6ff; padding: 2px 6px; border-radius: 4px; }
+        .item-comp { font-size: 0.85rem; font-weight: 600; color: var(--text-light); margin-bottom: 4px; }
+        
+        .tech-list { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+        .tech-badge { 
+            background: #f1f5f9; color: var(--text-dark); padding: 1px 7px; 
+            border-radius: 4px; font-size: 0.65rem; font-weight: 600; border: 1px solid #e2e8f0;
+            display: flex; align-items: center; gap: 3px;
+        }
+
+        .achievements-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .achievement-card { 
+            background: #f8fafc; padding: 10px; border-radius: 6px; 
+            border-left: 3px solid var(--accent); font-size: 0.75rem;
+        }
+
+        @media print {
+            body { background: white; }
+            .cv-container { box-shadow: none; margin: 0; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cv-container">
+    <aside class="sidebar">
+        <img src="assets/image/myself/photo.png" class="profile-img">
+        <h1 class="name">Grégory<br>Loubet-Bonino</h1>
+        <div class="job-title">PhD Student in Software Engineering</div>
+
+        <div class="sidebar-section">
+            <h3><i class="fas fa-id-card"></i> Contact</h3>
+            <a href="mailto:loubetgregoryb@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> loubetgregoryb@gmail.com</a>
+            <a href="https://www.linkedin.com/in/grégory-loubet-bonino-969879225/" class="contact-link"><i class="fab fa-linkedin"></i> https://www.linkedin.com/in/grégory-loubet-bonino-969879225/</a>
+            <a href="https://github.com/dragonfuneste" class="contact-link"><i class="fab fa-github"></i> https://github.com/dragonfuneste</a>
+            <a href="https://dragonfuneste.github.io/" class="contact-link"><i class="fas fa-globe"></i> https://dragonfuneste.github.io/</a>
+            <a href="tel:+33 6 76 57 22 83" class="contact-link"><i class="fas fa-phone"></i> +33 6 76 57 22 83</a>
+        </div>
+
+        <div class="sidebar-section">
+            <h3><i class="fas fa-terminal"></i> Skills</h3>
+            
+            <div class="skill-item">
+                <span class="skill-name">C/C++</span>
+                <div class="stars">
+                    
+                    
+                    
+                    
+                    <i class="fas fa-star "></i><i class="fas fa-star "></i><i class="fas fa-star "></i><i class="fas fa-star "></i><i class="fas fa-star star-off"></i>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <span class="skill-name">Rust</span>
+                <div class="stars">
+                    
+                    
+                    
+                    <i class="fas fa-star "></i><i class="fas fa-star "></i><i class="fas fa-star star-off"></i><i class="fas fa-star star-off"></i><i class="fas fa-star star-off"></i>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <span class="skill-name">Python</span>
+                <div class="stars">
+                    
+                    
+                    
+                    
+                    <i class="fas fa-star "></i><i class="fas fa-star "></i><i class="fas fa-star "></i><i class="fas fa-star "></i><i class="fas fa-star "></i>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <span class="skill-name">VHDL/Verilog</span>
+                <div class="stars">
+                    
+                    
+                    
+                    
+                    <i class="fas fa-star "></i><i class="fas fa-star "></i><i class="fas fa-star "></i><i class="fas fa-star star-off"></i><i class="fas fa-star star-off"></i>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="sidebar-section">
+            <h3><i class="fas fa-language"></i> Languages</h3>
+            
+            <div class="skill-item">
+                <span class="skill-name">French</span>
+                <div class="stars">
+                    
+                    
+                    
+                    <i class="fas fa-star "></i><i class="fas fa-star "></i><i class="fas fa-star "></i><i class="fas fa-star "></i><i class="fas fa-star "></i>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <span class="skill-name">English</span>
+                <div class="stars">
+                    
+                    
+                    
+                    <i class="fas fa-star "></i><i class="fas fa-star "></i><i class="fas fa-star "></i><i class="fas fa-star "></i><i class="fas fa-star star-off"></i>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <span class="skill-name">Spanish</span>
+                <div class="stars">
+                    
+                    
+                    <i class="fas fa-star "></i><i class="fas fa-star "></i><i class="fas fa-star star-off"></i><i class="fas fa-star star-off"></i><i class="fas fa-star star-off"></i>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <span class="skill-name">Mandarin Chinese</span>
+                <div class="stars">
+                    
+                    
+                    <i class="fas fa-star "></i><i class="fas fa-star "></i><i class="fas fa-star star-off"></i><i class="fas fa-star star-off"></i><i class="fas fa-star star-off"></i>
+                </div>
+            </div>
+            
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="summary">
+            Embedded Systems & Robotics Engineer with expertise in PCB design (Altium/KiCad) and autonomous systems (ROS2). Proven track record in rapid prototyping, from industrial automation to motorization algorithms, with a strong focus on hardware-software integration.
+        </div>
+
+        <div class="section-title"><i class="fas fa-briefcase"></i> Work Experience</div>
+        
+        <div class="item">
+            <div class="item-header">
+                <span class="item-role">PhD Researcher – Innoguard Project</span>
+                <span class="item-date">2025 October - Present</span>
+            </div>
+            <div class="item-comp">University of Bern - SEG Team</div>
+            <div style="line-height: 1.4;">As part of this PhD, I aim to make robots self-adaptive to dynamic environments using software engineering techniques to enhance safety. I am also working on making sensor monitoring more intelligent.</div>
+            <div class="tech-list">
+                
+                <span class="tech-badge">
+                    <i class="fas fa-robot"></i>
+                    
+                    ROS2
+                </span>
+                
+                <span class="tech-badge">
+                    <i class="fab fa-python"></i>
+                    
+                    Python
+                </span>
+                
+                <span class="tech-badge">
+                    <i class="fas fa-tag"></i>
+                    Gazebo
+                </span>
+                
+                <span class="tech-badge">
+                    <i class="fas fa-tag"></i>
+                    Linux
+                </span>
+                
+            </div>
+        </div>
+        
+        <div class="item">
+            <div class="item-header">
+                <span class="item-role">Internship in Microelectronics</span>
+                <span class="item-date">2025 February - 2025 September</span>
+            </div>
+            <div class="item-comp">INL Laboratory - FVLLMONTI</div>
+            <div style="line-height: 1.4;">Evaluation of different transistor structures (JLNWFET) through simulation. Design and measurement of temperature, voltage, and aging effects. Analysis of consequences at the neural network level.</div>
+            <div class="tech-list">
+                
+                <span class="tech-badge">
+                    <i class="fas fa-tag"></i>
+                    Cadence Virtuoso
+                </span>
+                
+                <span class="tech-badge">
+                    <i class="fas fa-tag"></i>
+                    Verilog
+                </span>
+                
+                <span class="tech-badge">
+                    <i class="fas fa-tag"></i>
+                    VHDL
+                </span>
+                
+                <span class="tech-badge">
+                    <i class="fas fa-tag"></i>
+                    Lisp
+                </span>
+                
+                <span class="tech-badge">
+                    <i class="fas fa-tag"></i>
+                    ModelSim
+                </span>
+                
+            </div>
+        </div>
+        
+        <div class="item">
+            <div class="item-header">
+                <span class="item-role">Internship as an Assistant Engineer</span>
+                <span class="item-date">2023 June - 2023 September</span>
+            </div>
+            <div class="item-comp">Guillemin, Dijon</div>
+            <div style="line-height: 1.4;">Design of mechanical parts for automation. Soldering, testing, and verifying PCBs used in industrial machinery.</div>
+            <div class="tech-list">
+                
+                <span class="tech-badge">
+                    <i class="fas fa-tag"></i>
+                    Solidworks
+                </span>
+                
+                <span class="tech-badge">
+                    <i class="fas fa-tag"></i>
+                    Manual Soldering
+                </span>
+                
+                <span class="tech-badge">
+                    <i class="fas fa-tag"></i>
+                    Oscilloscope
+                </span>
+                
+                <span class="tech-badge">
+                    <i class="fas fa-tag"></i>
+                    Multimeter
+                </span>
+                
+            </div>
+        </div>
+        
+        <div class="item">
+            <div class="item-header">
+                <span class="item-role">Freelance PCB Designer</span>
+                <span class="item-date">2024 - 2026</span>
+            </div>
+            <div class="item-comp">GLB Corps</div>
+            <div style="line-height: 1.4;">Built custom PCBs for various clients (Electric quad startup, Simulator steering wheel, Plasma cutting vacuum system). Managed electronics design and business accounting.</div>
+            <div class="tech-list">
+                
+                <span class="tech-badge">
+                    <i class="fas fa-tag"></i>
+                    Altium Designer
+                </span>
+                
+                <span class="tech-badge">
+                    <i class="fas fa-tag"></i>
+                    KiCad
+                </span>
+                
+                <span class="tech-badge">
+                    <i class="fas fa-tag"></i>
+                    EasyEDA
+                </span>
+                
+                <span class="tech-badge">
+                    <i class="fas fa-tag"></i>
+                    Project Management
+                </span>
+                
+            </div>
+        </div>
+        
+
+        <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
+        
+        <div class="item">
+            <div class="item-header">
+                <span class="item-role" style="font-size: 0.9rem;">Engineering Degree</span>
+                <span class="item-date">2022-2025</span>
+            </div>
+            <div class="item-comp">Telecom Saint-Etienne</div>
+            <div style="font-size: 0.8rem; font-style: italic; color: var(--text-light);">20 pourcent in the promotion. Marking courses: Embedded Linux, Digital Design, Real-Time Programming, Microcontroller Programming, Cybersecurity, Embedded AI, Secured Hardware Architecture.</div>
+        </div>
+        
+        <div class="item">
+            <div class="item-header">
+                <span class="item-role" style="font-size: 0.9rem;">Master 3EA (Dual-Degree)</span>
+                <span class="item-date">2024-2025</span>
+            </div>
+            <div class="item-comp">Centrale Lyon</div>
+            <div style="font-size: 0.8rem; font-style: italic; color: var(--text-light);">20 pourcent in the promotion. Marking courses: Computer Architecture, Embedded System Design, Sensors</div>
+        </div>
+        
+        <div class="item">
+            <div class="item-header">
+                <span class="item-role" style="font-size: 0.9rem;">DEUG - Prepa TSI</span>
+                <span class="item-date">2020-2022</span>
+            </div>
+            <div class="item-comp">Lycee Gustave Eiffel Dijon</div>
+            <div style="font-size: 0.8rem; font-style: italic; color: var(--text-light);">Ranked 1st of the promotion.</div>
+        </div>
+        
+        <div class="item">
+            <div class="item-header">
+                <span class="item-role" style="font-size: 0.9rem;">STIDD - Baccaloreate</span>
+                <span class="item-date">2020</span>
+            </div>
+            <div class="item-comp">Lycee Gustave Eiffel Dijon</div>
+            <div style="font-size: 0.8rem; font-style: italic; color: var(--text-light);">Ranked 1st of the promotion.</div>
+        </div>
+        
+
+        <div class="section-title"><i class="fas fa-award"></i> Honors & Achievements</div>
+        <div class="achievements-grid">
+            
+            <div class="achievement-card">
+                <strong style="color: var(--primary);">Major de Promotion (1st Rank)</strong><br>
+                <span style="color: var(--text-light); line-height: 1.2;">Ranked 1st out of the entire promotion in Prepa TSI</span>
+            </div>
+            
+            <div class="achievement-card">
+                <strong style="color: var(--primary);">Robotics Cup Finalist</strong><br>
+                <span style="color: var(--text-light); line-height: 1.2;">Led the team to significant results after rebuilding the association post-COVID (16th/200 teams)</span>
+            </div>
+            
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

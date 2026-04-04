@@ -1,0 +1,184 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lectures | {{ site.data.profile_eng.profile.name }}</title>
+  
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/home.css" /> 
+  
+  <style>
+    :root { --pink-base: #ff69b4; }
+    
+    body, html {
+      background-color: #0b0b0b !important;
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+      height: auto;
+      min-height: 100vh;
+    }
+
+    .lectures-wrapper {
+      position: relative;
+      z-index: 10;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px 140px 20px;
+    }
+
+    .section-title {
+      color: white;
+      font-size: 2rem;
+      margin: 40px 0 60px 0;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      text-align: center;
+    }
+    .section-title span { border-bottom: 2px solid var(--pink-base); padding-bottom: 5px; }
+
+    /* --- GROUPE DE COURS (Gros Cadre) --- */
+    .course-group {
+      margin-bottom: 100px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 105, 180, 0.2);
+      border-radius: 30px;
+      padding: 40px;
+      backdrop-filter: blur(10px);
+    }
+
+    .course-main-header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 20px;
+    }
+
+    .course-main-header h2 {
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 10px 0;
+      font-size: 1.8rem;
+    }
+
+    .course-meta { color: var(--pink-base); font-size: 0.9rem; font-weight: bold; text-transform: uppercase; }
+    .course-full-desc { color: #ccc; line-height: 1.6; font-size: 1.05rem; margin: 15px 0; }
+    .course-resp { color: #888; font-size: 0.9rem; font-style: italic; border-left: 3px solid var(--pink-base); padding-left: 15px; }
+
+    /* --- GRILLE DES LECTURES (Carrés) --- */
+    .lectures-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .lecture-card {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s;
+    }
+
+    .lecture-card:hover {
+      border-color: var(--pink-base);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(255, 105, 180, 0.1);
+    }
+
+    .lecture-card h3 {
+      color: var(--pink-base);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      height: 2.5em;
+      display: flex;
+      align-items: center;
+    }
+
+    /* CARRÉ POUR LE PDF */
+    .preview-area {
+      width: 100%;
+      aspect-ratio: 1 / 1; /* Force le format carré */
+      background: #111;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      border: 1px solid #222;
+    }
+    embed { width: 100%; height: 100%; }
+
+    .btn-group { display: flex; gap: 10px; }
+    .btn-action {
+      flex: 1;
+      text-align: center;
+      padding: 12px;
+      background: transparent;
+      color: white;
+      border: 1px solid var(--pink-base);
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.7rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: 0.3s;
+    }
+    .btn-action:hover { background: var(--pink-base); color: black; box-shadow: 0 0 15px var(--pink-base); }
+
+    .profile-photo { position: absolute; top: 30px; right: 40px; z-index: 20; }
+    .profile-photo img { width: 100px; height: 100px; border: 2px solid var(--pink-base); border-radius: 10px; }
+  </style>
+</head>
+
+<body>
+  <div id="bubble-container"></div> 
+
+  <div class="lectures-wrapper">
+    <header class="top-banner">
+      <h1>{{ site.data.profile_eng.profile.name }}</h1>
+      <h2>Academic Resources</h2>
+    </header>
+
+    <h1 class="section-title"><span>Teaching</span></h1>
+
+    {% for course in site.data.profile_eng.teaching %}
+    <section class="course-group">
+      
+      <div class="course-main-header">
+        <span class="course-meta">{{ course.institution }} — {{ course.date }}</span>
+        <h2>{{ course.Title }}</h2>
+        <p class="course-full-desc">{{ course.details }}</p>
+        <p class="course-resp"><strong>Key Responsibilities:</strong> {{ course.responsability }}</p>
+      </div>
+
+      <div class="lectures-grid">
+        {% for slide in course.slides %}
+        <div class="lecture-card">
+          <h3>{{ slide.title }}</h3>
+          
+          <div class="preview-area">
+            <embed src="{{ slide.link | replace: '.pptx', '.pdf' }}" type="application/pdf">
+          </div>
+
+          <div class="btn-group">
+            <a href="{{ slide.link | replace: '.pptx', '.pdf' }}" download class="btn-action">View PDF</a>
+            <a href="{{ slide.link }}" download class="btn-action">Source PPTX</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </section>
+    {% endfor %}
+
+  </div>
+
+  {% include menu.html %}
+  <script src="assets/js/bubble_script.js"></script>
+</body>
+</html>

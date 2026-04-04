@@ -1,0 +1,38 @@
+name: "🚀 Generate Engineering CV PDF"
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wkhtmltopdf xvfb
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Python dependencies
+        run: pip install PyYAML Jinja2 pdfkit
+
+      - name: Generate CV PDF
+        run: xvfb-run python generate_cv.py
+
+      - name: Upload PDF Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: "Engineering_CV_Final" # Nom du pack de téléchargement
+          path: CV_Gregory_LB.pdf      # Doit correspondre exactement au nom dans ton script Python
+          if-no-files-found: error     # Bloque l'action si le PDF n'a pas été créé

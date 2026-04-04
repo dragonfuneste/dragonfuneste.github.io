@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - {{ data.profile.name }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f172a; 
+            --accent: #2563eb;  
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-sidebar: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            margin: 0; color: var(--text-dark); background: #f1f5f9; font-size: 11px; 
+        }
+
+        .cv-container {
+            max-width: 840px; margin: 0 auto; background: var(--white);
+            display: grid; grid-template-columns: 260px 1fr; min-height: 29.7cm;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* --- SIDEBAR --- */
+        .sidebar { background: var(--bg-sidebar); padding: 25px 20px; border-right: 1px solid #e2e8f0; }
+        .profile-img { 
+            width: 120px; height: 120px; border-radius: 50%; object-fit: cover; 
+            border: 4px solid var(--white); box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin: 0 auto 15px; display: block;
+        }
+        .name { font-size: 1.3rem; font-weight: 800; color: var(--primary); text-align: center; margin-bottom: 5px; line-height: 1.2; }
+        .job-title { font-size: 0.8rem; color: var(--accent); font-weight: 700; text-align: center; margin-bottom: 20px; text-transform: uppercase; }
+
+        .sidebar-section { margin-bottom: 22px; }
+        .sidebar-section h3 { 
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;
+            color: var(--primary); border-bottom: 2px solid var(--accent);
+            padding-bottom: 4px; margin-bottom: 10px;
+        }
+
+        .contact-link { display: flex; align-items: center; text-decoration: none; color: var(--text-dark); margin-bottom: 7px; font-size: 0.75rem; }
+        .contact-link i { width: 20px; color: var(--accent); font-size: 0.9rem; }
+
+        .skill-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+        .skill-name { font-weight: 500; font-size: 0.75rem; }
+        .stars { color: var(--accent); font-size: 0.6rem; letter-spacing: 1px; }
+        .star-off { color: #cbd5e1; }
+
+        /* --- MAIN --- */
+        .main-content { padding: 30px 35px; }
+        .summary { 
+            font-size: 0.9rem; line-height: 1.5; color: var(--text-light); 
+            margin-bottom: 25px; border-left: 4px solid var(--accent); padding-left: 15px; font-style: italic;
+        }
+
+        .section-title { 
+            display: flex; align-items: center; gap: 8px; font-size: 1.05rem; 
+            font-weight: 800; color: var(--primary); text-transform: uppercase; 
+            margin: 20px 0 12px 0; border-bottom: 1px solid #eee; padding-bottom: 5px;
+        }
+        .section-title i { color: var(--accent); font-size: 0.9rem; }
+
+        .item { margin-bottom: 18px; }
+        .item-header { display: flex; justify-content: space-between; align-items: baseline; }
+        .item-role { font-weight: 700; font-size: 0.95rem; color: var(--primary); }
+        .item-date { font-size: 0.75rem; font-weight: 700; color: var(--accent); background: #eff6ff; padding: 2px 6px; border-radius: 4px; }
+        .item-comp { font-size: 0.85rem; font-weight: 600; color: var(--text-light); margin-bottom: 4px; }
+        
+        .tech-list { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+        .tech-badge { 
+            background: #f1f5f9; color: var(--text-dark); padding: 1px 7px; 
+            border-radius: 4px; font-size: 0.65rem; font-weight: 600; border: 1px solid #e2e8f0;
+            display: flex; align-items: center; gap: 3px;
+        }
+
+        .achievements-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .achievement-card { 
+            background: #f8fafc; padding: 10px; border-radius: 6px; 
+            border-left: 3px solid var(--accent); font-size: 0.75rem;
+        }
+
+        @media print {
+            body { background: white; }
+            .cv-container { box-shadow: none; margin: 0; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cv-container">
+    <aside class="sidebar">
+        <img src="{{ data.profile.photo }}" class="profile-img">
+        <h1 class="name">Grégory<br>Loubet-Bonino</h1>
+        <div class="job-title">{{ data.profile.title }}</div>
+
+        <div class="sidebar-section">
+            <h3><i class="fas fa-id-card"></i> Contact</h3>
+            <a href="mailto:{{ data.profile.email }}" class="contact-link"><i class="fas fa-envelope"></i> {{ data.profile.email }}</a>
+            <a href="{{ data.profile.linkedin }}" class="contact-link"><i class="fab fa-linkedin"></i> {{ data.profile.linkedin }}</a>
+            <a href="{{ data.profile.github }}" class="contact-link"><i class="fab fa-github"></i> {{ data.profile.github }}</a>
+            <a href="{{ data.profile.website }}" class="contact-link"><i class="fas fa-globe"></i> {{ data.profile.website }}</a>
+            <a href="tel:{{ data.profile.phone }}" class="contact-link"><i class="fas fa-phone"></i> {{ data.profile.phone }}</a>
+        </div>
+
+        <div class="sidebar-section">
+            <h3><i class="fas fa-terminal"></i> Skills</h3>
+            {% for p in data.skills_summary.programming %}
+            <div class="skill-item">
+                <span class="skill-name">{{ p.name }}</span>
+                <div class="stars">
+                    {# Logic for stars based on keywords in your YAML #}
+                    {% set level = 2 %}
+                    {% if p.level == 'Expert' %}{% set level = 5 %}
+                    {% elif p.level == 'Advanced' %}{% set level = 4 %}
+                    {% elif p.level == 'Intermediate' %}{% set level = 3 %}
+                    {% endif %}
+                    {% for i in range(5) %}<i class="fas fa-star {{ 'star-off' if i >= level else '' }}"></i>{% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="sidebar-section">
+            <h3><i class="fas fa-language"></i> Languages</h3>
+            {% for l in data.languages %}
+            <div class="skill-item">
+                <span class="skill-name">{{ l.name }}</span>
+                <div class="stars">
+                    {% set lang_lvl = 2 %}
+                    {% if 'Native' in l.level or 'C2' in l.level %}{% set lang_lvl = 5 %}
+                    {% elif 'C1' in l.level %}{% set lang_lvl = 4 %}
+                    {% elif 'B2' in l.level %}{% set lang_lvl = 3 %}
+                    {% endif %}
+                    {% for i in range(5) %}<i class="fas fa-star {{ 'star-off' if i >= lang_lvl else '' }}"></i>{% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="summary">
+            {{ data.profile.summary_engineering }}
+        </div>
+
+        <div class="section-title"><i class="fas fa-briefcase"></i> Work Experience</div>
+        {% for exp in data.experience[:4] %}
+        <div class="item">
+            <div class="item-header">
+                <span class="item-role">{{ exp.title }}</span>
+                <span class="item-date">{{ exp.date }}</span>
+            </div>
+            <div class="item-comp">{{ exp.company }}</div>
+            <div style="line-height: 1.4;">{{ exp.details_long }}</div>
+            <div class="tech-list">
+                {% for s in exp.stack %}
+                <span class="tech-badge">
+                    {% if 'Python' in s %}<i class="fab fa-python"></i>
+                    {% elif 'C++' in s %}<i class="fas fa-code"></i>
+                    {% elif 'ROS' in s %}<i class="fas fa-robot"></i>
+                    {% elif 'PCB' in s %}<i class="fas fa-microchip"></i>
+                    {% else %}<i class="fas fa-tag"></i>{% endif %}
+                    {{ s }}
+                </span>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+
+        <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
+        {% for edu in data.education %}
+        <div class="item">
+            <div class="item-header">
+                <span class="item-role" style="font-size: 0.9rem;">{{ edu.degree }}</span>
+                <span class="item-date">{{ edu.date }}</span>
+            </div>
+            <div class="item-comp">{{ edu.school }}</div>
+            {% if edu.details %}<div style="font-size: 0.8rem; font-style: italic; color: var(--text-light);">{{ edu.details }}</div>{% endif %}
+        </div>
+        {% endfor %}
+
+        <div class="section-title"><i class="fas fa-award"></i> Honors & Achievements</div>
+        <div class="achievements-grid">
+            {% for award in data.awards_and_achievements %}
+            <div class="achievement-card">
+                <strong style="color: var(--primary);">{{ award.title }}</strong><br>
+                <span style="color: var(--text-light); line-height: 1.2;">{{ award.detail }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

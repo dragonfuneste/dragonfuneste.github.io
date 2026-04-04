@@ -1,0 +1,63 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/home.css" /> 
+</head>
+
+<body>
+  <div id="bubble-container"></div> 
+
+  <main class="landing-layout">
+    <header class="top-banner">
+      <h1>{{ site.data.profile_eng.profile.name }}</h1>
+      <h2>{{ site.data.profile_eng.profile.title }}</h2>
+    </header>
+
+
+    <div class="project-carousel">
+      <h1 class="title">Projects Overview</h1>
+
+      <div class="carousel">
+        <div class="carousel-track">
+          {% for category in site.data.profile_eng.projects %}
+            {% for project in category[1] %}
+              
+              {% comment %} Boucle sur la liste d'images du projet {% endcomment %}
+              {% for img_path in project.images %}
+                <img src="{{ img_path }}" alt="{{ project.name }}">
+              {% endfor %}
+              
+              {% comment %} Cas de secours si tu as encore des projets avec une seule clé 'image' {% endcomment %}
+              {% if project.image %}
+                <img src="{{ project.image }}" alt="{{ project.name }}">
+              {% endif %}
+
+            {% endfor %}
+          {% endfor %}
+
+          {% comment %} REPETITION POUR L'EFFET INFINI {% endcomment %}
+          {% for category in site.data.profile_eng.projects %}
+            {% for project in category[1] %}
+              {% for img_path in project.images %}
+                <img src="{{ img_path }}" alt="{{ project.name }}">
+              {% endfor %}
+              {% if project.image %}
+                <img src="{{ project.image }}" alt="{{ project.name }}">
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </div>
+    </div>
+  </main>
+
+   {% include menu.html %}
+  <script src="assets/js/bubble_script.js"></script>
+</body>
+</html>

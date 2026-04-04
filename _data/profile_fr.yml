@@ -1,0 +1,174 @@
+profile:
+  name: "Grégory Loubet-Bonino"
+  title: "Doctorant en génie logiciel"
+  nationality: "Français"
+  location: "Berne, CH"
+  phone: "+33 6 76 57 22 83"
+  email_pro : "gregory.loubet-bonino@unibe.ch"
+  email: "loubetgregoryb@gmail.com"
+  github: "https://github.com/dragonfuneste"
+  linkedin: "https://www.linkedin.com/in/grégory-loubet-bonino-969879225/"
+  website: "https://dragonfuneste.github.io/"
+  photo: "assets/image/myself/photo.png"
+  age: "23 ans"
+  citation: "Deviens qui tu es, et sois ce que toi seul peux être. — Friedrich Nietzsche"
+  motivation : "Passionné par les nouvelles technologies. Mon parcours a suscité un fort intérêt pour l’électronique, qui m’a ensuite conduit vers la robotique. Je cherche aujourd’hui à faire de l’un de ces deux domaines mon axe principal de carrière."
+  
+  summary_engineering: "Ingénieur en systèmes embarqués et robotique avec une expertise en conception de PCB (Altium/KiCad) et systèmes autonomes (ROS2). Expérience avérée en prototypage rapide, de l’automatisation industrielle aux algorithmes de motorisation, avec un fort accent sur l’intégration matériel-logiciel."
+  summary_academic: "À la recherche d’un doctorat dans un domaine matériel ou électronique. Intéressé particulièrement par la microélectronique, la conception hardware et l’intersection entre hardware et IA. Mon objectif est de contribuer à la recherche de pointe tout en exploitant mon profil d’ingénieur pour faire le lien entre théorie et applications pratiques."
+
+experience:
+  - title: "Doctorant – Projet Innoguard"
+    company: "Université de Berne - Équipe SEG"
+    date: "2025 - Présent"
+    details_long: "Dans le cadre de ce doctorat, je travaille à rendre les robots auto-adaptatifs à des environnements dynamiques en utilisant des techniques de génie logiciel afin d’améliorer la sécurité. Je travaille également sur une supervision plus intelligente des capteurs."
+    achievements:
+      - "Conception d’un framework auto-adaptatif pour essaims multi-robots afin d’améliorer la sécurité opérationnelle."
+      - "Implémentation d’une supervision intelligente des capteurs basée sur les bonnes pratiques du génie logiciel."
+    keywords: ["Recherche", "Sécurité", "Auto-adaptation", "Robotique en essaim"]
+    stack: ["ROS2", "Python", "Gazebo", "Linux"]
+    logo: "assets/image/myself/logo_team.png"
+    skills: ["ROS2", "IA VLM et RL", "Enseignement", "Robotique"]
+
+  - title: "Stage en microélectronique"
+    company: "Laboratoire INL - FVLLMONTI"
+    date: "2025"
+    details_long: "Évaluation de différentes structures de transistors (JLNWFET) via simulation. Conception et mesure des effets de température, de tension et de vieillissement. Analyse des conséquences au niveau des réseaux de neurones."
+    achievements:
+      - "Simulation et évaluation réussies des performances des JLNWFET sous contraintes physiques variables."
+      - "Lien entre la physique des transistors et la précision des réseaux de neurones."
+    keywords: ["Nanotechnologie", "Simulation", "Analyse de données", "R&D"]
+    stack: ["Cadence Virtuoso", "Verilog", "VHDL", "Lisp", "ModelSim"]
+    logo: "assets/image/myself/FVLLMONTI.png"
+    skills: ["Cadence", "Verilog", "VHDL", "Verilog A", "Synthèse"]
+
+  - title: "Stage assistant ingénieur"
+    company: "Guillemin, Dijon"
+    date: "2023"
+    details_long: "Conception de pièces mécaniques pour l’automatisation. Soudure, tests et vérification de PCB utilisés dans des machines industrielles."
+    achievements:
+      - "Optimisation du processus de vérification des PCB pour machines industrielles."
+      - "Conception de composants mécaniques assurant une intégration fluide."
+    keywords: ["Fabrication", "Automatisation industrielle", "Contrôle qualité"]
+    stack: ["Solidworks", "Soudure manuelle", "Oscilloscope", "Multimètre"]
+    logo: "assets/image/myself/Guillemin.png"
+    skills: ["Solidworks", "Soudure", "Électronique"]
+
+  - title: "Concepteur PCB freelance"
+    company: "GLB Corps"
+    date: "2024 - 2026"
+    details_long: "Conception de PCB personnalisés pour divers clients (quad électrique, volant de simulation, système d’aspiration plasma). Gestion de la conception électronique et de la comptabilité."
+    achievements:
+      - "Livraison de prototypes PCB de haute qualité pour diverses startups."
+      - "Réalisation de revues DFM complètes pour optimiser la production."
+    keywords: ["Freelance", "Entrepreneuriat", "Conception hardware", "Gestion client"]
+    stack: ["Altium Designer", "KiCad", "EasyEDA", "Gestion de projet"]
+    logo: "assets/image/myself/Fiver.png"
+    skills: ["Conception PCB", "Systèmes embarqués", "Comptabilité"]
+
+projects:
+  robotics:
+    - name: "Robot Coupe de France de Robotique"
+      context: "Projet associatif - membre, superviseur, expert technique - 3 ans"
+      details: "Construction d’un robot pour la Coupe de France de Robotique"
+      detail_long: "Conception et fabrication de robots pour la compétition nationale. Reconstruction du club après le COVID et obtention de résultats significatifs."
+      achievements:
+        - "Reconstruction technique du club."
+        - "Développement d’algorithmes de motorisation pour navigation autonome."
+      keywords: ["Leadership", "Temps réel", "Hardware complet"]
+      stack: ["STM32", "ESP32", "Raspberry Pi", "C/C++", "Solidworks", "Altium"]
+      skill: "Assemblage, C, C++, Solidworks, EasyEDA, Altium, Soudure, STM32, ESP32, Raspberry Pi, Algorithmes de motorisation, IA"
+
+    - name: "Robot temps réel avec FreeRTOS"
+      context: "Projet école - 3ème année"
+      details: "Intégration IMU pour application aéronautique"
+      detail_long: "Application temps réel avec IMU. Optimisation de l’acquisition via tâches RTOS."
+      achievements:
+        - "Réduction de la charge CPU."
+        - "Respect des contraintes temps réel."
+      keywords: ["RTOS", "Embarqué", "Capteurs"]
+      stack: ["FreeRTOS", "STM32", "C", "I2C/SPI"]
+      skill: "STM32, capteurs IMU, FreeRTOS"
+
+  embedded_linux:
+    - name: "Développement de drivers Linux"
+      context: "Projet école"
+      details: "Drivers pour BeagleBone"
+      detail_long: "Développement de drivers et exploration du noyau Linux."
+      achievements:
+        - "Création de drivers bas niveau."
+        - "Implémentation temps réel."
+      keywords: ["Kernel", "Bas niveau"]
+      stack: ["C", "Linux Kernel", "BeagleBone Black"]
+
+  fpga_asic:
+    - name: "Réveil VHDL"
+      context: "Projet école"
+      details: "Conception FPGA"
+      detail_long: "Implémentation FSM sur Cyclone V."
+      achievements:
+        - "Conception FSM complexe."
+        - "Gestion des contraintes FPGA."
+      stack: ["VHDL", "Quartus", "Cyclone V"]
+
+    - name: "Simulation de circuits"
+      context: "Projet école"
+      details: "Librairie logique"
+      detail_long: "Conception et simulation complète."
+      achievements:
+        - "Création d’une librairie standard."
+        - "Génération fichiers .lib."
+      stack: ["Cadence", "Spectre"]
+
+  electronics:
+    - name: "Prototypes PCB freelance"
+      context: "Freelance"
+      details: "Hardware sur mesure"
+      detail_long: "Conception et programmation PCB."
+      achievements:
+        - "PCB volant simulation."
+        - "Contrôle PID plasma."
+      stack: ["KiCad", "Altium", "C"]
+
+  neural_networks:
+    - name: "MNIST sur FPGA"
+      context: "Projet école"
+      details: "IA hardware"
+      detail_long: "Déploiement réseaux sur FPGA."
+      achievements:
+        - "Accélération inférence."
+        - "Temps réel."
+      stack: ["Vivado", "FINN"]
+
+languages:
+  - { name: "Français", level: "Natif" }
+  - { name: "Anglais", level: "C1 - Professionnel" }
+  - { name: "Espagnol", level: "Intermédiaire" }
+  - { name: "Allemand", level: "A2 - Basique" }
+  - { name: "Chinois mandarin", level: "Basique" }
+
+skills_summary:
+  programming:
+    - { name: "C/C++", level: "Avancé" }
+    - { name: "Python", level: "Avancé" }
+    - { name: "VHDL/Verilog", level: "Intermédiaire" }
+  electronics:
+    - { name: "Conception PCB", level: "Expert" }
+    - { name: "Microélectronique", level: "Intermédiaire" }
+  robotics:
+    - { name: "ROS2 & Gazebo", level: "Avancé" }
+    - { name: "RTOS", level: "Intermédiaire" }
+
+awards_and_achievements:
+  - { title: "Major de promotion", institution: "Lycée Gustave Eiffel" }
+  - { title: "Finaliste Coupe de Robotique", institution: "Projet&Tech" }
+
+publications: 
+  - {title: "Analyse des JLNWFET pour réseaux de neurones", venue: "Mémoire de master - INL", date: "2025"}
+
+hobbies:
+  - { name: "Jardinage" }
+  - { name: "Rugby" }
+  - { name: "Metal music" }
+  - { name: "Crochet" }
+  - { name: "Robotic" }

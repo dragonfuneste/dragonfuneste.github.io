@@ -1,0 +1,125 @@
+\documentclass[10pt,a4paper]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.6in, top=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{enumitem}
+\usepackage{graphicx} 
+
+% --- Couleurs ---
+\definecolor{darkblue}{RGB}{0, 50, 120}
+\definecolor{graytext}{RGB}{70, 70, 70}
+
+% --- Configuration des liens ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    urlcolor=darkblue
+}
+
+% --- Style des Sections ---
+\titleformat{\section}{\large\bfseries\color{darkblue}}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{12pt}{6pt}
+
+% --- Listes ---
+\setlist[itemize]{leftmargin=1.5em, noitemsep, topsep=2pt, label=\small$\bullet$}
+
+\begin{document}
+
+% =============================================================
+% CONFIGURATION DYNAMIQUE (MODIFIE ICI POUR ADAPTER TON CV)
+% =============================================================
+% 1. Choisis les catégories de projets (ex: robotics, software_engineering, embedded_linux)
+((% set selected_categories = ['fpga_asic', 'electronics', 'neural_networks', 'security','microelectronics'] %))
+
+% 2. Choisis les niveaux de compétences (ex: ['Expert', 'Advanced', 'Intermediate'])
+((% set min_levels = ['Expert', 'Advanced', 'Intermediate'] %))
+% =============================================================
+
+% --- Header avec Photo et Contacts ---
+\noindent
+\begin{minipage}[c]{0.78\textwidth}
+    {\Huge \color{darkblue} \textbf{[[ profile.name ]]}} \\
+    \vspace{4pt}
+    {\large \color{graytext} [[ profile.title ]]} \\
+    \vspace{8pt}
+    \small
+    \faMapMarker* [[ profile.location ]] \quad | \quad 
+    \faPhone* [[ profile.phone ]] \quad | \quad 
+    \faEnvelope \ \href{mailto:[[ profile.email_pro ]]}{[[ profile.email_pro | replace('_', '\_') ]]} \\
+    \vspace{4pt}
+    \faGithub \ \href{[[ profile.github ]]}{GitHub} \quad | \quad 
+    \faLinkedin \ \href{[[ profile.linkedin ]]}{LinkedIn} \quad | \quad 
+    \faGlobe \ \href{[[ profile.website ]]}{Website}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.18\textwidth}
+    \centering
+    ((% if profile.photo %))
+        \includegraphics[width=\linewidth]{[[ profile.photo ]]}
+    ((% endif %))
+\end{minipage}
+
+\vspace{10pt}
+
+% --- Summary ---
+\section{Summary}
+[[ profile.summary_academic | replace('_', '\_') | replace('&', '\&') ]]
+
+% --- Education ---
+\section{Education}
+((% for edu in education %))
+\noindent \textbf{[[ edu.school | replace('_', '\_') | replace('&', '\&') ]]} \hfill [[ edu.date ]] \\
+\textbf{[[ edu.degree | replace('_', '\_') | replace('&', '\&') ]]} ((% if edu.details %)) \textit{-- [[ edu.details | replace('_', '\_') | replace('&', '\&') ]]} ((% endif %)) \\
+\vspace{4pt}
+((% endfor %))
+
+% --- Professional Experience ---
+\section{Professional Experience}
+((% for exp in experience %))
+\noindent \textbf{[[ exp.company | replace('_', '\_') | replace('&', '\&') ]]} | \textbf{[[ exp.title | replace('_', '\_') | replace('&', '\&') ]]} \hfill [[ exp.date ]] \\
+((% if exp.details_long %)) \textit{[[ exp.details_long | replace('_', '\_') | replace('&', '\&') ]]} \\ ((% endif %))
+\begin{itemize}
+    ((% for ach in exp.achievements %)) 
+    \item [[ ach | replace('_', '\_') | replace('&', '\&') ]] 
+    ((% endfor %))
+\end{itemize}
+\vspace{6pt}
+((% endfor %))
+
+% --- Projects (Filtrés dynamiquement) ---
+\section{Projects}
+((% for category, projs in projects.items() %))
+    ((% if category in selected_categories %))
+    \noindent \textbf{\color{darkblue} [[ category | replace('_', ' ') | capitalize ]]} \\
+    ((% for project in projs %))
+    \noindent \textbf{[[ project.name | replace('_', '\_') | replace('&', '\&') ]]} \hfill \textit{[[ project.context | replace('_', '\_') | replace('&', '\&') ]]} \\
+    [[ project.details | replace('_', '\_') | replace('&', '\&') ]] 
+    ((% if project.stack %)) \\ \textit{\small Stack: [[ project.stack | replace('_', '\_') | replace('&', '\&') ]]} ((% endif %)) \\
+    \vspace{4pt}
+    ((% endfor %))
+    ((% endif %))
+((% endfor %))
+
+% --- Teaching ---
+\section{Teaching}
+((% for item in teaching %))
+\noindent \textbf{[[ item.institution | replace('_', '\_') | replace('&', '\&') ]]} | \textbf{[[ item.Title | replace('_', '\_') | replace('&', '\&') ]]} \hfill [[ item.date ]] \\
+[[ item.details | replace('_', '\_') | replace('&', '\&') ]] \textit{-- [[ item.responsability | replace('_', '\_') | replace('&', '\&') ]]} \\
+\vspace{4pt}
+((% endfor %))
+
+
+% --- Languages ---
+\section{Languages}
+\noindent
+((% for lang in languages %))
+\textbf{[[ lang.name ]]} ([[ lang.level ]])((% if not loop.last %)) \quad | \quad ((% endif %))
+((% endfor %))
+
+\end{document}
