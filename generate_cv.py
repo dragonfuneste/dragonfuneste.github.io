@@ -5,23 +5,34 @@ import sys
 import os
 
 def generate_cv():
-    # Détermination du dossier racine du projet
+    # Base directory of the project
     current_dir = os.path.dirname(os.path.abspath(__file__))
     
+    # Correcting the paths based on your 'tree' output
     data_path = os.path.join(current_dir, '_data', 'profile_eng.yml')
-    # On initialise le loader sur le dossier des templates
-    template_dir = os.path.join(current_dir, '_templates')
+    # Changed from '_templates' to 'templates'
+    template_dir = os.path.join(current_dir, 'templates')
     
-    # Nom du fichier final à la racine du projet
     output_pdf = os.path.join(current_dir, 'CV_Gregory_LB.pdf')
 
     print(f"--- Loading data from {data_path} ---")
+    if not os.path.exists(data_path):
+        print(f"❌ Error: Data file not found at {data_path}")
+        sys.exit(1)
+
     with open(data_path, 'r', encoding='utf-8') as f:
         data = yaml.safe_load(f)
 
-    # Configuration Jinja2 (comme ton script Academic)
+    # Initialize Jinja2 with the 'templates' directory
     env = Environment(loader=FileSystemLoader(template_dir))
-    template = env.get_template('engineering.html')
+    
+    try:
+        template = env.get_template('engineering.html')
+    except Exception as e:
+        print(f"❌ Error: Could not find engineering.html in {template_dir}")
+        print(f"Exception: {e}")
+        sys.exit(1)
+
     html_content = template.render(data=data)
 
     options = {
@@ -35,26 +46,19 @@ def generate_cv():
         'quiet': '' 
     }
 
+    # Configuration for wkhtmltopdf
     if sys.platform.startswith('win'):
         path_wkhtmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
         config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
     else:
-        # Sur Linux / GitHub Actions
         config = pdfkit.configuration()
 
     print(f"--- Creating PDF at {output_pdf} ---")
     try:
-        # On génère d'abord en string pour vérifier que tout va bien
         pdfkit.from_string(html_content, output_pdf, configuration=config, options=options)
-        
         if os.path.exists(output_pdf):
             print(f"✅ PDF successfully created. Size: {os.path.getsize(output_pdf)} bytes")
-        else:
-            print(f"❌ Critical Error: pdfkit claimed success but {output_pdf} is missing.")
-            sys.exit(1)
-            
     except Exception as e:
-        # Sur GitHub Actions, wkhtmltopdf quitte parfois avec un code 1 même s'il réussit
         if os.path.exists(output_pdf):
             print(f"✅ PDF generated despite technical warning: {e}")
         else:
