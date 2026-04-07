@@ -1,0 +1,154 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research – {{ site.data.profile_eng.profile.name }}</title>
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/about.css">
+  
+  <style>
+    /* Spécifique à la mise en page recherche */
+    .research-card {
+        background: var(--background_container_color);
+        border: 1px solid var(--second_color);
+        border-radius: 20px;
+        padding: 30px;
+        margin-bottom: 40px;
+        backdrop-filter: blur(10px);
+    }
+    .financing-badge {
+        display: inline-block;
+        background: rgba(255, 105, 180, 0.15);
+        color: var(--pink-base);
+        padding: 5px 15px;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        border: 1px solid var(--pink-base);
+    }
+    .media-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+    }
+    .media-container img, .media-container video {
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid #333;
+    }
+    .research-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 25px;
+        border-top: 1px solid #222;
+        padding-top: 20px;
+    }
+    .grid-item h5 {
+        color: var(--pink-base);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        letter-spacing: 1.5px;
+    }
+    .grid-item ul { list-style: none; padding: 0; margin: 0; }
+    .grid-item ul li {
+        font-size: 0.9rem;
+        color: #eee;
+        margin-bottom: 8px;
+        line-height: 1.4;
+    }
+    .tag-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+    .tag { font-size: 0.75rem; background: #222; padding: 4px 10px; border-radius: 5px; color: #ccc; }
+  </style>
+</head>
+
+<body class="about-page">
+  <div id="bubble-container"></div>
+
+  <div class="about-wrapper">
+    
+    <header style="margin-bottom: 50px; text-align: center;">
+      <h1 class="title" style="font-size: 3rem; color: white;">Research Positions</h1>
+      <p style="color: var(--pink-base);">Bridging Software Engineering & Emerging Technologies</p>
+    </header>
+
+    {% for exp in site.data.profile_eng.experience %}
+      {% if exp.type == "research" %}
+      <section class="research-card">
+        
+        {% if exp.fincancing %}
+          <div class="financing-badge">
+            🇪🇺 {{ exp.fincancing[0] }}
+          </div>
+        {% endif %}
+
+        <div style="display: flex; gap: 25px; align-items: flex-start; flex-wrap: wrap;">
+          <img src="{{ exp.logo }}" style="width: 80px; height: 80px; object-fit: contain;" alt="logo">
+          <div style="flex: 1; min-width: 300px;">
+            <h2 style="margin: 0; color: white;">{{ exp.title }}</h2>
+            <h4 style="color: #888; margin: 5px 0 15px 0;">{{ exp.company }} | {{ exp.date }}</h4>
+            <p class="details" style="color: #ccc; line-height: 1.6;">{{ exp.details_long }}</p>
+          </div>
+        </div>
+
+        {% if exp.image or exp.video %}
+        <div class="media-container">
+          {% for vid in exp.video %}
+            <video controls><source src="{{ vid }}" type="video/mp4"></video>
+          {% endfor %}
+          {% for img in exp.image %}
+            <img src="{{ img }}" alt="Research highlight">
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="research-grid">
+          {% if exp.publication %}
+          <div class="grid-item">
+            <h5>Publications & Thesis</h5>
+            <ul>{% for pub in exp.publication %}<li>{{ pub }}</li>{% endfor %}</ul>
+          </div>
+          {% endif %}
+
+          {% if exp.lecture %}
+          <div class="grid-item">
+            <h5>Lectures & Teaching</h5>
+            <ul>{% for lec in exp.lecture %}<li>{{ lec }}</li>{% endfor %}</ul>
+          </div>
+          {% endif %}
+
+          {% if exp.repo %}
+          <div class="grid-item">
+            <h5>Open Source</h5>
+            <ul>
+              {% for link in exp.repo %}
+                <li><a href="{{ link }}" target="_blank" style="color: var(--pink-base); text-decoration: underline;"> {{  link  }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+        </div>
+
+        <div class="tag-container">
+          {% for s in exp.stack %}<span class="tag">{{ s }}</span>{% endfor %}
+        </div>
+
+      </section>
+      {% endif %}
+    {% endfor %}
+
+  </div>
+
+  {% include menu.html %}
+  <script src="assets/js/bubble_script.js"></script>
+</body>
+</html>

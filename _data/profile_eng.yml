@@ -30,6 +30,14 @@ experience:
     stack: ["ROS2", "Python", "Gazebo", "Linux"]
     logo: "assets/image/myself/logo_team.png"
     skills: ["ROS2", "VLM and RL AI", "Teaching", "Robotics"]
+    type : "research"
+    publication : ["UAV Log Dataset for Swarm Behavior Analysis - I4A"]
+    lecture : ["Dev Ops for CPS - University of Bern", "Law, Autonomous Systems, and Ethics in Embedded Systems", "Law, Autonomous Systems, and Ethics in Embedded Systems"]
+    image : ["assets/image/technical/flight.png"]
+    video : []
+    repo : ["https://github.com/dragonfuneste/UAV_dataset.git","https://github.com/dragonfuneste/swarm-robotics"]
+    fincancing : ["Innoguard Project - European Project"]
+    logo : 'assets/image/myself/innoguard.png'
 
   - title: "Internship in Microelectronics"
     company: "INL Laboratory - FVLLMONTI"
@@ -42,18 +50,10 @@ experience:
     stack: ["Cadence Virtuoso", "Verilog", "VHDL", "Lisp", "ModelSim"]
     logo: "assets/image/myself/FVLLMONTI.png"
     skills: ["Cadence", "Verilog", "VHDL", "Verilog A", "Synthesis"]
-
-  - title: "Internship as an Assistant Engineer"
-    company: "Guillemin, Dijon"
-    date: "2023 June - 2023 September"
-    details_long: "Design of mechanical parts for automation. Soldering, testing, and verifying PCBs used in industrial machinery."
-    achievements:
-      - "Optimized PCB verification workflow for industrial automation machinery."
-      - "Designed custom mechanical components ensuring seamless integration into existing lines."
-    keywords: ["Manufacturing", "Industrial Automation", "Quality Control"]
-    stack: ["Solidworks", "Manual Soldering", "Oscilloscope", "Multimeter"]
-    logo: "assets/image/myself/Guillemin.png"
-    skills: ["Solidworks", "Soldering", "Electronics"]
+    type : "research"
+    publication : ["Analysis of JLNWFET for Neural Networks - Master Thesis"]
+    fincancing : ["FVLLMONTI Project - European Project"]
+    logo : 'assets/image/myself/FVLLMONTI.png'
 
   - title: "Freelance PCB Designer"
     company: "GLB Corps"
@@ -66,6 +66,22 @@ experience:
     stack: ["Altium Designer", "KiCad", "EasyEDA", "Project Management"]
     logo: "assets/image/myself/Fiver.png"
     skills: ["PCB design", "Embedded systems", "Company accounting"]
+    type : "industrial"
+
+  - title: "Internship as an Assistant Engineer"
+    company: "Guillemin, Dijon"
+    date: "2023 June - 2023 September"
+    details_long: "Design of mechanical parts for automation. Soldering, testing, and verifying PCBs used in industrial machinery."
+    achievements:
+      - "Optimized PCB verification workflow for industrial automation machinery."
+      - "Designed custom mechanical components ensuring seamless integration into existing lines."
+    keywords: ["Manufacturing", "Industrial Automation", "Quality Control"]
+    stack: ["Solidworks", "Manual Soldering", "Oscilloscope", "Multimeter"]
+    logo: "assets/image/myself/Guillemin.png"
+    skills: ["Solidworks", "Soldering", "Electronics"]
+    type : "industrial"
+
+
 
 projects:
   robotics:
