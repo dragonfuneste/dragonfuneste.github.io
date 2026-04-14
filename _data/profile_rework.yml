@@ -1,0 +1,630 @@
+# ============================================================
+# PROFILE - Grégory Loubet-Bonino
+# Architecture: entities defined once, referenced by id
+# ============================================================
+
+profile:
+  name: "Grégory Loubet-Bonino"
+  title: "PhD Student in Software Engineering"
+  nationality: "French"
+  location: "Bern, CH"
+  birth_date: "2002-01-01"   # remplace age: "23 years old" (calculer dynamiquement)
+  phone: "+33 6 76 57 22 83"
+  email_pro: "gregory.loubet-bonino@unibe.ch"
+  email: "loubetgregoryb@gmail.com"
+  github: "https://github.com/dragonfuneste"
+  linkedin: "https://www.linkedin.com/in/grégory-loubet-bonino-969879225/"
+  website: "https://dragonfuneste.github.io/"
+  photo: "assets/image/myself/photo.png"
+  citation: "Become who you are, and be what only you can be. — Friedrich Nietzsche"
+  motivation: "Passionate about new technology. My background sparked a deep interest in electronics, which eventually led me to robotics. I am now striving to make one of these two fields my primary career path."
+  summary_engineering: "Embedded Systems & Robotics Engineer with expertise in PCB design (Altium/KiCad) and autonomous systems (ROS2). Proven track record in rapid prototyping, from industrial automation to motorization algorithms, with a strong focus on hardware-software integration."
+  summary_academic: "Looking for a PhD position in a hardware or electronics field of study. I am particularly interested in microelectronics, hardware design, and the intersection of hardware and AI. My goal is to contribute to cutting-edge research while leveraging my engineering background to bridge the gap between theory and practical applications."
+
+# ============================================================
+# Organisation  — Organisation dont je fait ou faisait partie, définie une seule fois, référencée partout
+# ============================================================
+
+organisation :
+
+  - id: "personal_projects"
+    name: "Personal Projects"
+    institution: "Self-initiated"
+    logo: "assets/image/myself/Fiver.png"
+    description: "A collection of personal projects spanning robotics, embedded systems, and AI. These projects reflect my passion for hands-on experimentation and innovation in technology."
+    relationship : ["freelance_pcb"]
+
+  - id: "seg_team"
+    name: "Software Engineering for Robotics Group (SEG)"
+    institution: "University of Bern"
+    logo: "assets/image/myself/logo_team.png"
+    description: "The SEG team focuses on software engineering research on my part I was more focusse on robotics and software development, but I also contributed to the software engineering research. I'm part of the section where we apply software engineering techniques to robotics"
+    relationship : ["phd_robotic","devops_cps", "law_autonomous_systems"]
+
+  - id: "innoguard_project"
+    name: "Innoguard Project"
+    institution: "European Project"
+    logo: "assets/image/myself/innoguard.png"
+    description: "Innoguard is a European research project aimed at developing self-adaptive robotic systems that can operate safely in dynamic and uncertain environments. The project focuses on creating frameworks for real-time monitoring and adaptation to enhance the safety and reliability of multi-robot swarms."
+    relationship : ["phd_robotic"]
+
+  - id : "FVLLMONTI_project"
+    name: "FVLLMONTI Project"
+    institution: "European Project"
+    logo: "assets/image/myself/FVLLMONTI.png"
+    description: "The FVLLMONTI project is a European research initiative focused  on develloping new microelectronic technologies."
+    relationship : ["internship_inl"]
+
+  - id : "robotics_cup"
+    name: "Projet&Tech Robotics Club"
+    institution: "Telecom Saint-Etienne"
+    logo: "assets/image/myself/logo_P&T.png"
+    description: "Projet&Tech is a student robotics club at Telecom Saint-Etienne. We designed and build robots to compete in the French Robotics Cup, fostering teamwork, innovation, and hands-on experience in robotics engineering."
+    relationship : ["robotics_cup","engineering_degree"] 
+
+# ============================================================
+# PUBLICATIONS — définies une seule fois, référencées partout
+# ============================================================
+publications:
+  - id: "master_eng_thesis"
+    title: "Analysis of JLNWFET for Neural Networks"
+    venue: "Master Thesis - INL"
+    date: "2025"
+    relationship : ["engineering_degree", "master_3ea"]
+
+  - id: "uav_dataset_ia4a"
+    title: "UAV Log Dataset for Swarm Behavior Analysis"
+    venue: "_"
+    date: "2025"
+    relationship : ["phd_robotic"]
+
+# ============================================================
+# TEACHING — défini une seule fois, référencé depuis relationship 
+# ============================================================
+
+teaching:
+
+  - id: "devops_cps"
+    title: "Dev Ops for CPS"
+    institution: "University of Bern"
+    date: "January 2026 - June 2026"
+    details: "Teaching assistant for the Dev Ops for CPS course, covering topics such as CI/CD, containerization, and deployment strategies for cyber-physical systems."
+    responsibility: "Grading, supervision of projects, lecturing on ROS2 localization and Gazebo simulation."
+    logo: "assets/image/myself/logo_team.png"
+    slides:
+      - title: "Lecture 7 : Virtual Worlds, Real Robots: Visualization & SLAM"
+        link: "assets/slides/Devop_course.pptx"
+    relationship : ["phd_robotic"]
+  - id: "law_autonomous_systems"
+    title: "Law, Autonomous Systems, and Ethics in Embedded Systems"
+    institution: "University of Bern"
+    date: "January 2026 - June 2026"
+    details: "Teaching assistant for Autonomous Systems in Practice: Technology, Law, and Society course."
+    responsibility: "Delivered lectures on industrial practice, robot movement uncertainty, and ethical issues in autonomous systems and about how Law is applied in the robotics industry."
+    logo: "assets/image/myself/logo_team.png"
+    slides:
+      - title: "LECTURE 6 : How can the robot move ?"
+        link: "assets/slides/L6_law.pptx"
+      - title: "LECTURE 7 : How can the robot decide with the uncertainty ?"
+        link: "assets/slides/L7_law.pptx"
+    relationship : ["phd_robotic"]
+
+# ============================================================
+# relationship 
+# ============================================================
+
+experiences:
+
+  - id: "phd_robotic"
+    title: "PhD Researcher – Innoguard Project"
+    company: "University of Bern - SEG Team"
+    date: "2025 October - Present"
+    type: "research"
+    logo: "assets/image/myself/innoguard.png"
+    financing: "Innoguard Project - European Project"
+    details_long: "As part of this PhD, I aim to make robots self-adaptive to dynamic environments using software engineering techniques to enhance safety. I am also working on making sensor monitoring more intelligent."
+    achievements:
+      - "Designing a self-adaptive framework for multi-robot swarms to enhance operational safety."
+      - "Implementing intelligent sensor monitoring using software engineering best practices."
+    keywords: ["Research", "Safety", "Self-adaptation", "Swarm Robotics"]
+    stack: ["ROS2", "Python", "Gazebo", "Linux"]
+    skills: ["ROS2", "VLM and RL AI", "Teaching", "Robotics"]
+    images: ["assets/image/technical/flight.png"]
+    videos: []
+    repos: ["https://github.com/dragonfuneste/UAV_dataset.git", "https://github.com/dragonfuneste/swarm-robotics"]
+    publications: ["uav_dataset_ia4a"]       
+    teaching: ["devops_cps", "law_autonomous_systems"]
+    relationship : ["seg_team", "innoguard_project"]   
+
+  - id: "internship_inl"
+    title: "Internship in Microelectronics"
+    company: "INL Laboratory - FVLLMONTI"
+    date: "2025 February - 2025 September"
+    type: "research"
+    logo: "assets/image/myself/FVLLMONTI.png"
+    financing: "FVLLMONTI Project - European Project"
+    details_long: "Evaluation of different transistor structures (JLNWFET) through simulation. Design and measurement of temperature, voltage, and aging effects. Analysis of consequences at the neural network level."
+    achievements:
+      - "Successfully simulated and evaluated JLNWFET performance across variable physical constraints."
+      - "Bridged the gap between transistor-level physics and high-level neural network accuracy."
+    keywords: ["Nanotechnology", "Simulation", "Data Analysis", "R&D"]
+    stack: ["Cadence Virtuoso", "Verilog", "VHDL", "Lisp", "ModelSim"]
+    skills: ["Cadence", "Verilog", "VHDL", "Verilog A", "Synthesis"]
+    images: ["assets/image/technical/INL_internship.png"]
+    publications: ["master_eng_thesis"]       
+    relationship : ["FVLLMONTI_project","Master 3EA","engineering_degree"]  
+
+  - id: "freelance_pcb"
+    title: "Freelance PCB Designer"
+    company: "GLB Corps"
+    date: "2024 - 2026"
+    type: "industrial"
+    logo: "assets/image/myself/Fiver.png"
+    details_long: "Built custom PCBs for various clients (Electric quad startup, Simulator steering wheel, Plasma cutting vacuum system). Managed electronics design and business accounting."
+    achievements:
+      - "Delivered high-quality PCB prototypes for diverse startups (E-mobility, Simulation)."
+      - "Conducted full design reviews (DFM) to optimize production yields for industrial clients."
+    keywords: ["Freelance", "Entrepreneurship", "Hardware Design", "Client Management"]
+    stack: ["Altium Designer", "KiCad", "EasyEDA", "Project Management"]
+    skills: ["PCB design", "Embedded systems", "Company accounting"]
+    relationship : ["personal_projects"]
+
+  - id: "internship_guillemin"
+    title: "Internship as an Assistant Engineer"
+    company: "Guillemin, Dijon"
+    date: "2023 June - 2023 September"
+    type: "industrial"
+    logo: "assets/image/myself/Guillemin.png"
+    details_long: "Design of mechanical parts for automation. Soldering, testing, and verifying PCBs used in industrial machinery."
+    achievements:
+      - "Optimized PCB verification workflow for industrial automation machinery."
+      - "Designed custom mechanical components ensuring seamless integration into existing lines."
+    keywords: ["Manufacturing", "Industrial Automation", "Quality Control"]
+    stack: ["Solidworks", "Manual Soldering", "Oscilloscope", "Multimeter"]
+    skills: ["Solidworks", "Soldering", "Electronics"]
+    relationship : ["engineering_degree"] 
+
+
+# ============================================================
+# PROJECTS
+# ============================================================
+
+projects:
+  robotics:
+    - id: "robotics_cup"
+      name: "French Robotics Cup robot building"
+      context: "Association project - Team member, supervisor, technical expert - 3 years"
+      details: "Build robot for the French Robotics Cup with Projet&Tech team"
+      details_long: "Designed and built robots for the national competition. Rebuilt the club after the COVID crisis and achieved significant results in the final year."
+      achievements:
+        - "Led the technical reconstruction of the club after a long hiatus."
+        - "Engineered motorization algorithms for precise autonomous navigation."
+      keywords: ["Leadership", "Real-time Control", "Full-stack Hardware"]
+      stack: ["STM32", "ESP32", "Raspberry Pi", "C/C++", "Solidworks", "Altium"]
+      skills: ["Assembly", "C", "C++", "Solidworks", "EasyEDA", "Altium", "Soldering", "STM32", "ESP32", "Raspberry Pi", "Motorisation algorithm", "AI"]
+      images: ["assets/image/technical/robot_P&T.png", "assets/image/technical/robot_P&T2.png"]
+      videos: ["assets/image/technical/Video_Robot_1.mp4", "assets/image/technical/Video_Robot_2.mp4"]
+      repo: "https://github.com/Projet-et-Tech"
+      relationship : ["Projet&Tech"]        # lié à l'organisation Projet&Tech
+
+    - id: "freertos_robot"
+      name: "Real-time robot with FreeRTOS"
+      context: "School project - 3rd year of Engineering"
+      details: "IMU integration for real-time aviation"
+      details_long: "Built a real-time application using an IMU for aircraft use-cases. Optimized position and temperature data acquisition using RTOS tasks instead of standard interrupts."
+      achievements:
+        - "Reduced CPU overhead by implementing task-based sensor polling."
+        - "Guaranteed real-time constraints for critical IMU data processing."
+      keywords: ["RTOS", "Embedded Software", "Sensors"]
+      stack: ["FreeRTOS", "Trace analyzer", "STM32", "C", "I2C/SPI"]
+      skills: ["STM32", "IMU sensor", "FreeRTOS"]
+      images: ["assets/image/technical/traceanalyzer.png"]
+      relationship : ["engineering_degree"]        
+
+    - id: "personal_robots"
+      name: "Personal Robots"
+      context: "Personal project"
+      details: "Various robot prototypes built for experimental purposes"
+      details_long: "Built several prototypes including a walking robot, a robotics learning kit, a BB8-style robot, and an automated Nerf turret."
+      achievements:
+        - "Developed custom kinematics for a walking robot prototype."
+        - "Integrated vision systems for an automated Nerf defense turret."
+      keywords: ["Prototyping", "Rapid Manufacturing", "Innovation"]
+      stack: ["Python", "C++", "Raspberry Pi", "3D Printing"]
+      skills: ["Raspberry Pi", "STM32", "ESP32"]
+      images:
+        - "assets/image/technical/Asmodeus.png"
+        - "assets/image/technical/walking_robot.png"
+        - "assets/image/technical/nerf_turret.png"
+        - "assets/image/technical/robot.png"
+      relationship : ["personal_projects"]        
+
+  embedded_linux:
+    - id: "linux_drivers"
+      name: "Linux drivers development"
+      context: "School project - 3rd year of Engineering"
+      details: "Driver development for BeagleBone"
+      details_long: "Developed custom drivers to understand kernel architecture. Applied them to room automation and explored real-time kernel patches for improved efficiency."
+      achievements:
+        - "Created low-level drivers for GPIO and sensor interfacing on Linux Kernel."
+        - "Implemented real-time patches to meet strict automation timing requirements."
+        - "Built an educational robot for children."
+      keywords: ["Kernel", "Low-level", "System Programming"]
+      stack: ["C", "Linux Kernel", "BeagleBone Black"]
+      skills: ["BeagleBone Black", "Kernel C"]
+      images: ["assets/image/technical/robot_for_children.png"]
+      repo: "https://github.com/dragonfuneste/Robot_educatif.git"
+      relationship : ["engineering_degree"] 
+
+    - id: "arcade_cabinet"
+      name: "Custom Arcade Cabinet"
+      context: "Personal project"
+      details: "Built an arcade cabinet for retro gaming"
+      details_long: "Designed the cabinet in Solidworks. Created custom electronics to run arcade software efficiently as an alternative to expensive hardware at the time."
+      achievements: []
+      keywords: ["Kernel", "Low-level", "System Programming", "Prototyping", "Retro Gaming"]
+      stack: ["C", "Linux Kernel", "Solidworks", "3D Printing"]
+      skills: ["PCB design", "Solidworks", "C", "3D printing"]
+      images: ["assets/image/technical/arcade.png"]
+      relationship : ["personal_projects"]        
+
+  fpga_asic:
+    - id: "vhdl_alarm_clock"
+      name: "VHDL Alarm clock"
+      context: "School project - 2nd year of Engineering"
+      details: "Design of a digital alarm clock on FPGA"
+      details_long: "Implemented a complex VHDL project on a Cyclone V to understand digital design constraints and state machine implementation."
+      achievements:
+        - "Designed and implemented a multi-mode digital clock using Finite State Machines (FSM)."
+        - "Managed hardware constraints and timing analysis on Cyclone V FPGA."
+      stack: ["VHDL", "Quartus", "Cyclone V FPGA"]
+      relationship : ["engineering_degree"]
+
+    - id: "circuit_simulation"
+      name: "Circuit simulation"
+      context: "School project - 3rd year of Engineering"
+      details: "Logic cell library design"
+      details_long: "Designed schematics and layouts, ran simulations, and performed characterization to generate .lib files and standard cell libraries."
+      achievements:
+        - "Developed a full standard cell library from schematic to layout."
+        - "Performed characterization and generated .lib files for synthesis flows."
+      stack: ["Cadence Virtuoso", "Spectre", "Layout Design"]
+      relationship : ["engineering_degree"]
+  electronics:
+    - id: "freelance_pcb_prototypes"
+      name: "Freelance PCB Prototypes"
+      context: "Freelance projects"
+      details: "Custom hardware for startups and industrial systems"
+      details_long: "Designed and programmed PCBs for various clients, including motorization boards, simulator peripherals, and industrial control systems."
+      achievements:
+        - "Designed a steering wheel PCB prototype for a professional simulation startup."
+        - "Engineered the full PCB design and firmware for an electric quad prototype."
+        - "Developed a custom PID control system for plasma cutting machine air management."
+        - "Performed DFM (Design for Manufacturing) reviews and optimizations for industrial CNC and power supply boards."
+      stack: ["KiCad", "Altium Designer", "EasyEDA", "C", "PID Control"]
+      images:
+        - "assets/image/technical/layout.png"
+        - "assets/image/technical/schematics.png"
+      relationship : ["freelance_pcb"]          # lié à l'expérience freelance
+
+  neural_networks:
+    - id: "mnist_fpga"
+      name: "MNIST on FPGA"
+      context: "School project - 3rd year of Engineering"
+      details: "Hardware acceleration for AI on FPGA"
+      details_long: "Implemented neural networks on a PYNQ board using Vivado and the FINN framework to understand hardware-level AI deployment."
+      achievements:
+        - "Accelerated inference times by deploying quantized neural networks on FPGA fabric."
+        - "Integrated the FINN framework with Xilinx Pynq for real-time digit recognition."
+      stack: ["Vivado", "FINN", "Pynq (Xilinx)", "Python"]
+      relationship : [ "engineering_degree"]
+
+    - id: "embedded_nn_optimization"
+      name: "Embedded NN Optimization"
+      context: "Personal & Team Projects"
+      details: "Real-time decision making on STM32 and Raspberry Pi"
+      details_long: "Used a three-layer neural network to optimize robot decision-making and explored VLM deployment for computer vision."
+      achievements:
+        - "Optimized a 3-layer NN for real-time robot navigation on low-power microcontrollers."
+        - "Researched VLM (Vision Language Model) deployment on STM32 for localized person detection."
+      stack: ["Python", "C++", "STM32", "Raspberry Pi", "Computer Vision"]
+      relationship : ["personal_projects"      ]
+
+    - id: "jlnwfet_nn_evaluation"
+      name: "JLNWFET Neural Network Fault Injection"
+      context: "Master Thesis - INL Laboratory"
+      details: "Evaluation of JLNWFET variations on N2C2 neural network performance"
+      details_long: "Analyzed how temperature, voltage, and aging-induced variations in JLNWFET transistors affect the accuracy of an N2C2 neural network, using fault injection simulations."
+      achievements:
+        - "Quantified the impact of hardware-level variations on neural network inference accuracy."
+        - "Provided insights into the robustness of N2C2 architectures under physical constraints."
+      stack: ["Cadence Virtuoso", "Verilog", "VHDL", "Lisp", "ModelSim", "Tetramax"]
+      relationship : ["internship_inl"]     # lié à l'expérience INL
+
+  security:
+    - id: "hardware_cryptography"
+      name: "Hardware & Embedded Cryptography"
+      context: "School & Personal Projects"
+      details: "AES on FPGA and Secure Robotics"
+      details_long: "Implemented the AES algorithm on FPGA and evaluated cybersecurity protocols for bare-metal systems."
+      achievements:
+        - "Developed a hardware-accelerated AES core on Cyclone V FPGA."
+        - "Led the defense strategy (Blue-team) for a secure robot communication simulation using RSA and AES."
+      stack: ["VHDL", "Bare-metal C", "STM32", "Cryptography"]
+      relationship : ["personal_projects"]
+
+  microelectronics:
+    - id: "jlnwfet_evaluation"
+      name: "JLNWFET evaluation"
+      context: "Internship at INL Laboratory"
+      details: "Transistor to Neural Network level evaluation"
+      details_long: "Analyzed 3D transistor technology (Junctionless Nanowire Fet). Evaluated performance from the transistor level up to an N2C2 neural network, considering temperature and aging."
+      achievements:
+        - "Analyzed the impact of aging and temperature on 3D transistor structures."
+        - "Quantified the consequences of hardware-level variations on neural network accuracy."
+      stack: ["Cadence", "Synopsys", "Neural Networks", "Simulation"]
+      images: ["assets/image/technical/INL_internship.png"]
+      relationship : ["internship_inl"]          # lié à l'expérience INL
+
+    - id: "synthesis_automation"
+      name: "Automation synthesis frameworks"
+      context: "Internship at INL Laboratory"
+      details: "Measurement workflows framework development"
+      details_long: "Automated synthesis and simulation processes using Cadence and ModelSim to find optimal PMOS and NMOS parameter configurations."
+      achievements:
+        - "Developed an automated framework to streamline microelectronic simulation workflows."
+        - "Optimized PMOS/NMOS configurations through script-based synthesis and characterization."
+      stack: ["Lisp", "Verilog", "ModelSim", "Cadence"]
+      relationship : ["internship_inl"]
+
+  software_engineering:
+    - id: "uav_log_dataset"
+      name: "UAV Log Dataset"
+      context: "PhD in SEG team"
+      details: "Built a dataset for tool competition frameworks"
+      details_long: "Developed a comprehensive dataset of UAV logs to be used in a competitive software engineering framework."
+      achievements:
+        - "Curated a high-fidelity dataset for UAV swarm behavioral analysis."
+        - "Established a baseline for robotic software testing competitions."
+      keywords: ["Open Data", "Dataset", "UAV"]
+      stack: ["ROS2", "Python", "SQL"]
+      skills: ["ROS2", "Python"]
+      repo: "https://github.com/dragonfuneste/UAV_dataset.git"
+      images: ["assets/image/technical/flight.png"]
+      relationship : ["phd_robotic"]           # lié à l'expérience PhD
+      publications: ["uav_dataset_ia4a"]
+
+    - id: "dynamic_testcase_generator"
+      name: "Dynamic Testcase Generator"
+      context: "PhD in SEG team"
+      details: "Challenging testcase generator for multi-robot systems"
+      details_long: "Developed a tool to generate complex and evolving environments for testing robot swarm reliability."
+      achievements:
+        - "Automated the generation of diverse test scenarios using evolutionary algorithms."
+        - "Increased testing coverage for swarm-based obstacle avoidance logic."
+      keywords: ["Evolutionary Algorithms", "Testing", "Reliability"]
+      stack: ["ROS2", "Gazebo", "Python"]
+      skills: ["ROS2", "Gazebo", "Evolutionary Algorithms"]
+      relationship : ["phd_robotic"]
+
+
+# ============================================================
+# EDUCATION
+# ============================================================
+
+education:
+  - id: "engineering_degree"
+    degree: "Engineering Degree"
+    school: "Telecom Saint-Etienne"
+    date: "2022-2025"
+    details: "Top 20% of the promotion. Marking courses: Embedded Linux, Digital Design, Real-Time Programming, Microcontroller Programming, Cybersecurity, Embedded AI, Secured Hardware Architecture."
+    story: "Having my engineering degree is one of my biggest prides. Since I was a child I wanted to be an engineer, and I was really proud when I got into this school. I learned new things, met new people and had a great experience. In parallel, I had to work as a freelancer to pay my school fees and rent, and I am really proud of the work I did for my clients and the fact that I was able to manage both at the same time."
+    logo: "assets/image/myself/Telecom.png"
+    relationship : ["master_3ea", "Projet&Tech"]
+
+    
+  - id: "master_3ea"
+    degree: "Master 3EA (Dual-Degree)"
+    school: "Centrale Lyon"
+    date: "2024-2025"
+    details: "Top 20% of the promotion. Marking courses: Computer Architecture, Embedded System Design, Sensors."
+    story: "In my last year of engineering I had the opportunity to do a dual degree in microelectronics at ECL. I was really interested in microelectronics and I wanted to have a more research-oriented experience, so I decided to do this dual degree. It was really hard to manage both at the same time, but I learned a lot and I am really proud of the work I did there."
+    logo: "assets/image/myself/logo_ECL.png"
+
+  - id: "prepa_tsi"
+    degree: "DEUG - Prepa TSI"
+    school: "Lycee Gustave Eiffel Dijon"
+    date: "2020-2022"
+    details: "Ranked 1st of the promotion."
+    story: "I had very good grades, so my teacher advised me to go to Prepa, one of the most selective paths in France. It was hard but I really liked the spirit of it, and by the end I passed the concours for the best engineering schools in France, finishing 74th out of 2000 students, which allowed me to get into Telecom Saint-Etienne."
+    logo: "assets/image/myself/logo_Eiffel.png"
+    relationship : ["engineering_degree"]
+
+  - id: "baccalaureat"
+    degree: "STIDD - Baccalaureate"
+    school: "Lycee Gustave Eiffel Dijon"
+    date: "2020"
+    details: "Ranked 1st of the promotion."
+    story: "I was not really interested in school when I was younger. I had good grades but I did not study at all. Because of that I had to go in this path at first and I was not motivated, because STIDD students are often seen as weak students. But there I discovered electronics and I was really passionate about it, so I started to work hard and I ended up being the best of the promotion."
+    logo: "assets/image/myself/logo_Eiffel.png"
+    relationship : ["prepa_tsi"]
+
+# ============================================================
+# SKILLS SUMMARY
+# ============================================================
+
+skills_summary:
+  programming:
+    - { name: "C/C++", level: "Advanced", keywords: ["STL", "Bare-metal", "Real-time"] }
+    - { name: "Rust", level: "Beginner", keywords: ["Memory Safety", "Concurrency"] }
+    - { name: "Python", level: "Expert", keywords: ["PyTorch", "ROS2 APIs", "Data Analysis"] }
+    - { name: "VHDL/Verilog", level: "Intermediate", keywords: ["Synthesis", "Simulation", "ModelSim"] }
+  electronics:
+    - { name: "PCB Design", level: "Expert", tools: ["Altium", "KiCad", "EasyEDA"] }
+    - { name: "Microelectronics", level: "Intermediate", tools: ["Cadence Virtuoso"] }
+  robotics:
+    - { name: "ROS2 & Gazebo", level: "Advanced" }
+    - { name: "RTOS", level: "Intermediate", keywords: ["FreeRTOS"] }
+  fpga_asic:
+    - { name: "FPGA Design", level: "Intermediate", tools: ["Vivado", "Quartus"] }
+    - { name: "ASIC Design", level: "Beginner", tools: ["Cadence Virtuoso"] }
+    - { name: "Hardware AI", level: "Beginner", keywords: ["FINN", "Quantization"] }
+    - { name: "Hardware Security", level: "Beginner", keywords: ["AES", "RSA", "Cryptography"] }
+
+
+# ============================================================
+# AWARDS & ACHIEVEMENTS
+# ============================================================
+
+awards_and_achievements:
+  - title: "Major de Promotion (1st Rank)"
+    institution: "Lycee Gustave Eiffel"
+    detail: "Ranked 1st out of the entire promotion in Prepa TSI"
+    relationship: ["prepa_tsi"]     
+
+  - title: "Robotics Cup Finalist"
+    institution: "Projet&Tech"
+    detail: "Led the team to significant results after rebuilding the association post-COVID (16th/200 teams)"
+    relationship: ["robotics_cup", "Projet&Tech"]
+
+  - title: "Having my Engineering Degree"
+    institution: "engineering_degree"
+    detail: "One of the biggest prides of my life, I wanted to be an engineer since I was a child and I am really proud of the work I did during these three years, especially considering that I had to work as a freelancer at the same time to pay my school fees and rent."
+    relationship: ["engineering_degree"]
+
+# ============================================================
+# LANGUAGES
+# ============================================================
+
+languages:
+  - { name: "French", level: "Native", code: "FR" }
+  - { name: "English", level: "C1 - Professional", code: "EN" }
+  - { name: "Spanish", level: "Intermediate", code: "ES" }
+  - { name: "Mandarin Chinese", level: "Basic", code: "ZH" }
+
+
+# ============================================================
+# HOBBIES
+# ============================================================
+
+hobbies:
+  - { name: "Gardening", image: "assets/image/myself/plante.png" }
+  - { name: "Rugby", image: "assets/image/myself/USG.png" }
+  - { name: "Metal music", image: "assets/image/myself/metal.png" }
+  - { name: "Crochet", image: "assets/image/myself/crochet.png" }
+  - { name: "Robotics", image: "assets/image/myself/robot.png" }
+  - { name: "Cooking", image: "assets/image/myself/cooking.png" }
+  - { name: "Traveling", image: "assets/image/myself/travel.png" }
+  - { name: "Cats", image: "assets/image/myself/cat.png" }
+
+
+# ============================================================
+# FAVORITE ART
+# ============================================================
+
+favorite_art:
+  - id: "demain_des_laube"
+    title: "Demain dès l'aube"
+    author: "Victor Hugo"
+    type: "poem"
+    reason: "It is the first poem I learned by heart, I still know some verses. It was written to talk about death. It is so sad and also so well written. It was the first time in my life I cried for art."
+    link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUUNTa4J2k3R8uV_MEdvv2KM5tXARooTZtiQ&s"
+
+  - id: "nightmare_before_christmas"
+    title: "Nightmare Before Christmas"
+    author: "Tim Burton"
+    type: "film"
+    reason: "Because it was the first Disney where the villain wins. Jack is actually the one messing up Christmas, and he regrets nothing, so for me he is the villain. Also, I love the visual style of this film."
+    link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt_CSGDrOxkB4s62faGEj_ra2uJ6YPinEqgBk9HZ2nD8scr7JW"
+
+  - id: "les_miserables"
+    title: "Les Misérables"
+    author: "Victor Hugo"
+    type: "book"
+    reason: "This book made me realize that even the worst person can be redeemed and that stories are about human struggle, not just heroes and villains."
+    link: "https://m.media-amazon.com/images/I/81e1NPAQJmL._AC_UF1000,1000_QL80_.jpg"
+
+  - id: "marie_curie"
+    title: "Marie Curie"
+    author: "Marie Curie"
+    type: "scientist"
+    reason: "I am a huge fan of Marie Curie. She represents the most famous woman in science. Her story made me realize the historical unfairness towards women and reinforced my belief that everyone should be equal and respected."
+    link: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Marie_Curie_c._1920s.jpg/960px-Marie_Curie_c._1920s.jpg"
+
+  - id: "leonardo_da_vinci"
+    title: "Leonardo Da Vinci"
+    author: "Leonardo Da Vinci"
+    type: "scientist, artist, engineer, virtuoso"
+    reason: "It was literally because of him that I wanted to become an Engineer. When I was a child I saw the 'Il était une fois la vie' series and there was a scientist designed after him. I loved that character — I loved the idea of curiosity, of always trying to find things."
+    link: "https://hips.hearstapps.com/hmg-prod/images/portrait-of-leonardo-da-vinci-1452-1519-getty.jpg"
+
+  - id: "beyond_good_and_evil"
+    title: "Beyond Good and Evil"
+    author: "Friedrich Nietzsche"
+    type: "book"
+    reason: "A nightmare to understand at first, but it changed my life completely. It made me reflect on my actions and heritage."
+    link: "https://m.media-amazon.com/images/I/71DOYQ78OUL._AC_UF1000,1000_QL80_.jpg"
+
+  - id: "starry_night"
+    title: "Starry Night"
+    author: "Van Gogh"
+    type: "painting"
+    reason: "A beautiful feeling of emptiness. It represents the raw beauty of humanity in art."
+    link: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"
+
+  - id: "frida_kahlo"
+    title: "Frida Kahlo"
+    author: "Frida Kahlo"
+    type: "painter"
+    reason: "I love the paintings of this artist, and how she represents herself in all of her works."
+    link: "https://upload.wikimedia.org/wikipedia/commons/0/06/Frida_Kahlo%2C_by_Guillermo_Kahlo.jpg"
+
+  - id: "wanderer_above_sea_of_fog"
+    title: "Wanderer above the Sea of Fog"
+    author: "Caspar David Friedrich"
+    type: "painting"
+    reason: "Represents freedom, dreams, and the fear of novelty."
+    link: "https://i.pinimg.com/736x/51/dd/58/51dd5851ff1b803bdd00c769af34a2f6.jpg"
+
+  - id: "one_piece"
+    title: "One Piece"
+    author: "Eiichiro Oda"
+    type: "anime"
+    reason: "The world-building is incredible. I admire the dedication of the author over the years."
+    link: "https://m.media-amazon.com/images/S/pv-target-images/1595dc2f5bd3654d3d263b4fce60780b118bb31ee3af7a9dc9c99f89ba415934._SX1080_FMjpg_.jpg"
+
+  - id: "eminence_in_shadow"
+    title: "Eminence in Shadow"
+    author: "Daisuke Aizawa"
+    type: "anime"
+    reason: "I do not know why I love this but I love it, so it is here!"
+    link: "https://m.media-amazon.com/images/I/81c0AcniEEL._UF1000,1000_QL80_.jpg"
+
+  - id: "batman_killing_joke"
+    title: "Batman: The Killing Joke"
+    author: "Alan Moore"
+    type: "comics"
+    reason: "The first comics I ever read in my life and I loved it. It also changed my thinking about madness — anyone can go mad, you just need the right push."
+    link: "https://images.thalia.media/07/-/a50fa52304cc4c1e9070bfe9548944de/batman-killing-joke-alben-edition-gebundene-ausgabe-alan-moore.jpeg"
+  
+  - id: "what_doesnt_kill_you"
+    title: "What doesn't kill you make you stronger"
+    author: "Natalie Gulbis"
+    type: "book"
+    reason: "This book change a bit my perspective of the suffering in life. You need to suffer to build resilience, learn from mistakes, become a better person."
+    link: "https://m.media-amazon.com/images/I/81e1NPAQJmL._AC_UF1000,1000_QL80_.jpg"
+
+people: 
+  - id: "Connor"
+    name: "Ian O Connor"
+    role: "Professor"
+    linkdin : "https://www.linkedin.com/in/ian-o-connor-7592153/"
+    relation : "Master thesis supervisor"
+    organisation : ["FVLLMONTI_project", "master_3ea"]
+
+  - id: "pannichela"
+    name : "Sebastianno Pannichela"
+    role: "Researcher"
+    linkdin : "https://www.linkedin.com/in/sebastiano-panichella-a47b3839/"
+    relation : "Thesis supervisor"
+    organisation : ["seg_team", "phd_robotic"]

@@ -53,6 +53,7 @@ experience:
     type : "research"
     publication : ["Analysis of JLNWFET for Neural Networks - Master Thesis"]
     fincancing : ["FVLLMONTI Project - European Project"]
+    image : ["assets/image/technical/INL_internship.png"]
     logo : 'assets/image/myself/FVLLMONTI.png'
 
   - title: "Freelance PCB Designer"
