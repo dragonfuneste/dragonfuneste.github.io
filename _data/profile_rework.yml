@@ -77,6 +77,12 @@ publications:
     venue: "_"
     date: "2025"
     relationship : ["phd_robotic"]
+  - id: "tool_competition"
+    title: "Introduction to ICST Tool Competition 2026 - UAV Testing Track"
+    venue : "ICST"
+    date: "2026"
+    relationship : ["phd_robotic"]
+
 
 # ============================================================
 # TEACHING — défini une seule fois, référencé depuis relationship 
@@ -205,7 +211,7 @@ projects:
       images: ["assets/image/technical/robot_P&T.png", "assets/image/technical/robot_P&T2.png"]
       videos: ["assets/image/technical/Video_Robot_1.mp4", "assets/image/technical/Video_Robot_2.mp4"]
       repo: "https://github.com/Projet-et-Tech"
-      relationship : ["Projet&Tech"]        # lié à l'organisation Projet&Tech
+      relationship : ["Projet&Tech"]  
 
     - id: "freertos_robot"
       name: "Real-time robot with FreeRTOS"
@@ -305,7 +311,7 @@ projects:
       images:
         - "assets/image/technical/layout.png"
         - "assets/image/technical/schematics.png"
-      relationship : ["freelance_pcb"]          # lié à l'expérience freelance
+      relationship : ["freelance_pcb"]
 
   neural_networks:
     - id: "mnist_fpga"
@@ -339,7 +345,7 @@ projects:
         - "Quantified the impact of hardware-level variations on neural network inference accuracy."
         - "Provided insights into the robustness of N2C2 architectures under physical constraints."
       stack: ["Cadence Virtuoso", "Verilog", "VHDL", "Lisp", "ModelSim", "Tetramax"]
-      relationship : ["internship_inl"]     # lié à l'expérience INL
+      relationship : ["internship_inl"] 
 
   security:
     - id: "hardware_cryptography"
@@ -354,6 +360,7 @@ projects:
       relationship : ["personal_projects"]
 
   microelectronics:
+
     - id: "jlnwfet_evaluation"
       name: "JLNWFET evaluation"
       context: "Internship at INL Laboratory"
@@ -378,6 +385,7 @@ projects:
       relationship : ["internship_inl"]
 
   software_engineering:
+
     - id: "uav_log_dataset"
       name: "UAV Log Dataset"
       context: "PhD in SEG team"
@@ -407,6 +415,18 @@ projects:
       skills: ["ROS2", "Gazebo", "Evolutionary Algorithms"]
       relationship : ["phd_robotic"]
 
+    - id: "Robotic AI RL"
+      name: "RL for multicontext robotics"
+      context: "PhD in SEG team"
+      details: "Challenging testcase generator for multi-robot systems"
+      details_long: "Developed a tool to generate mutli context  optimization of Non functunial property given the context "
+      achievements:
+        - " "
+        - " "
+      keywords: ["RL", "Non Functiunal Property"]
+      stack: ["ROS2", "Gazebo","AI", "Python"]
+      skills: ["ROS2", "Gazebo", "Renforcement Learning"]
+      relationship : ["phd_robotic"]
 
 # ============================================================
 # EDUCATION
@@ -420,15 +440,17 @@ education:
     details: "Top 20% of the promotion. Marking courses: Embedded Linux, Digital Design, Real-Time Programming, Microcontroller Programming, Cybersecurity, Embedded AI, Secured Hardware Architecture."
     story: "Having my engineering degree is one of my biggest prides. Since I was a child I wanted to be an engineer, and I was really proud when I got into this school. I learned new things, met new people and had a great experience. In parallel, I had to work as a freelancer to pay my school fees and rent, and I am really proud of the work I did for my clients and the fact that I was able to manage both at the same time."
     logo: "assets/image/myself/Telecom.png"
+    image: ["asset/image/myself/degre_inge.png"]
     relationship : ["master_3ea", "Projet&Tech"]
 
     
   - id: "master_3ea"
     degree: "Master 3EA (Dual-Degree)"
     school: "Centrale Lyon"
-    date: "2024-2025"
+    date:   "2024-2025"
     details: "Top 20% of the promotion. Marking courses: Computer Architecture, Embedded System Design, Sensors."
     story: "In my last year of engineering I had the opportunity to do a dual degree in microelectronics at ECL. I was really interested in microelectronics and I wanted to have a more research-oriented experience, so I decided to do this dual degree. It was really hard to manage both at the same time, but I learned a lot and I am really proud of the work I did there."
+    image: ["asset/image/myself/degre_master.png","asset/image/myself/degre_master2.png"]
     logo: "assets/image/myself/logo_ECL.png"
 
   - id: "prepa_tsi"
