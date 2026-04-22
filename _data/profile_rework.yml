@@ -311,9 +311,12 @@ projects:
       images:
         - "assets/image/technical/layout.png"
         - "assets/image/technical/schematics.png"
+        - "assets/image/tecnical/pcb.png"
+        - "assets/image/technical/Quad_electric.png"
       relationship : ["freelance_pcb"]
 
   neural_networks:
+  
     - id: "mnist_fpga"
       name: "MNIST on FPGA"
       context: "School project - 3rd year of Engineering"
